@@ -1,0 +1,550 @@
+/* ----------------------------------------------------------------------------------------------------------
+ * - GLOBAL style configuration
+ * ---------------------------------------------------------------------------------------------------------- */
+* {
+	box-sizing: border-box;
+}
+a {
+	color: #1c94c4;
+	text-decoration: none;
+}
+a:hover {
+	color: #1c94c4;
+}
+.ui-menu {
+	z-index: 10;
+}
+.ui-menu-item.selected>a {
+	font-weight: bold;
+}
+.cmdbuildClear {
+	height: 0px;
+	width: 0px;
+	display: block;
+	clear: both;
+}
+
+/* ----------------------------------------------------------------------------------------------------------
+ * - App structure
+ * ---------------------------------------------------------------------------------------------------------- */
+
+/* ----------------------------------------------------------------------------------------------------------
+ * - Navigation toolbar
+ * ---------------------------------------------------------------------------------------------------------- */
+.cmdbuildNavigationToolbar {
+	/*position: relative;*/
+	height: 60px;
+	width: 100%;
+	margin: 0em 0em .5em 0em;
+	padding: .5em;
+	clear: left;
+	border-bottom: 1px solid #dddddd;;
+}
+
+/* ----------------------------------------------------------------------------------------------------------
+ * - Header
+ * ---------------------------------------------------------------------------------------------------------- */
+.cmdbuildHeader {
+	/*position: relative;*/
+	height: 60px;
+	width: 100%;
+	margin: 0em 0em .5em 0em;
+	padding: .5em;
+	clear: left;
+	border-bottom: 1px solid #dddddd;;
+}
+.cmdbuildHeader .cmdbuildLogoWrapperContainer {
+	height: 100%;
+}
+.cmdbuildHeader .cmdbuildLogoWrapper {
+	height: 100%;
+	width: 150px;
+	background: transparent url("../images/cmdbuild_logo_150x45.png") no-repeat left
+		top;
+	background-size: 100% 100%;
+}
+.cmdbuildHeader .cmdbuildTitleWrapper {
+	height: 100%;
+	text-align: center;
+	color: #113da0;
+	font-family: Helvetica, Arial, sans-serif;
+}
+
+/* ----------------------------------------------------------------------------------------------------------
+ * - Content
+ * ---------------------------------------------------------------------------------------------------------- */
+.cmdbuildMenuColumnWrapper {
+	border-left: 0px !important;
+}
+
+/* ----------------------------------------------------------------------------------------------------------
+ * - Main navigation
+ * ---------------------------------------------------------------------------------------------------------- */
+.cmdbuildMenuColumnContainer .cmdbuildTitleWrapper {
+	margin: 0em 0em 1em 0em;
+}
+.cmdbuildMenuColumnContainer .cmdbuildTitleWrapper h2 {
+	margin: 0px;
+	padding: 0px 0px 0px 10px;
+	line-height: 37px;
+}
+.cmdbuildMenuColumnContainer.ui-menu,.cmdbuildMenuColumnContainer ul {
+	border: none;
+	position: relative !important;
+}
+.cmdbuildMenuColumnContainer ul ul {
+	padding: 0em 0em 0em 1em;
+}
+.cmdbuildMenuColumnContainer ul li a {
+	color: #333333;
+	text-decoration: none;
+	margin: 0em 0em 0em 1em;
+}
+.cmdbuildMenuColumnContainer ul li a:hover {
+	color: #1c94c4;
+}
+.ui-menu .ui-icon {
+	position: absolute;
+	top: .2em;
+	bottom: 0;
+	left: .2em;
+	margin: 0px;
+}
+
+/* ----------------------------------------------------------------------------------------------------------
+ * - Forms styles
+ * ---------------------------------------------------------------------------------------------------------- */
+.cmdbuildFormRow {
+	position: relative;
+	float: left;
+	display: block;
+	margin: 0em 0em .2em 0em;
+}
+.cmdbuildBlockFormRow {
+	display: block;
+	clear: both;
+	width: 100%;
+}
+.cmdbuildFooterButtonsWrapper,.cmdbuildButtonsWrapper {
+	display: block;
+	clear: both;
+	text-align: center;
+	margin: 1em 0em 0em 0em;
+}
+.cdmdbuildVboxContainer * {
+	display: block;
+	clear: both;
+}
+
+/* Form buttons */
+.formButtons {
+	text-align: center;
+	margin-top: 1em;
+}
+
+/* ----------------------------------------------------------------------------------------------------------
+ * - Input fields
+ * ---------------------------------------------------------------------------------------------------------- */
+.cmdbuildButton {
+	height: 2em;
+	float: left;
+	margin: 0em 0em 0em .1em;
+}
+.ui-input-text,input[type="text"] {
+	width: 30em !important;
+	text-align: left;
+	padding: .1em 1em .1em 1em;
+	display: block;
+	height: 2em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	vertical-align: bottom;
+}
+textarea {
+	width: 30em !important;
+	padding: .5em 1em .5em 1em;
+}
+textarea.hiddentextarea {
+	display: none;
+}
+.ui-selectmenu-button {
+	width: 30em !important;
+}
+.ui-selectmenu-menu .ui-menu {
+	font-size: 1em;
+}
+
+/* Labels */
+.cmdbuildGuiFormRow,
+.cmdbuildGuiFormField {
+	margin: 0.5em 0;
+}
+.cmdbuildGuiFormRow:after,
+.cmdbuildGuiFormField:after {
+	clear: both;
+	content: " "; /* 1 */
+	display: table; /* 2 */
+}
+.cmdbuildGuiFormRow dt,
+.cmdbuildGuiFormField dt {
+	float: left;
+	width: 10em;
+	text-align: right;
+	padding-top: 0.4em;
+	font-weight: bold;
+}
+.cmdbuildGuiFormRow dt:after,
+.cmdbuildGuiFormField dt:after {
+	content: ":";
+}
+.cmdbuildGuiFormRow dd,
+.cmdbuildGuiFormField dd {
+	margin-left: 11em;
+}
+.cmdbuildGuiFormRow.cmdbuildGuiFormRowReadOnly dd,
+.cmdbuildGuiFormField.cmdbuildGuiFormFieldReadOnly dd,
+.cmdbuildGuiFormField.cmdbuildGuiFormField-boolean dd {
+	padding-top: 0.4em;
+}
+.cmdbuildGuiFormRow-reference .cmdbuildButton,
+.cmdbuildGuiFormField-reference .cmdbuildButton {
+	float: none;
+	vertical-align: top;
+	height: 2.35em;
+}
+.cmdbuildGuiFormField.cmdbuildGuiFormFieldError {
+	
+}
+.cmdbuildGuiFormField.cmdbuildGuiFormFieldError dd label.error {
+	color: #a94442;
+	display: block;
+}
+
+/* ----------------------------------------------------------------------------------------------------------
+ * - Grid styles
+ * ---------------------------------------------------------------------------------------------------------- */
+.cmdbuildMainColumnWrapper .dataTables_wrapper .dataTables_scroll {
+	max-height: 500px;
+	overflow-y: auto;
+}
+table.dataTable tbody td {
+	padding: 0px 3px;
+	margin: 0px;
+	height: 35px;
+	max-width: 300px;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+/* Grid navigation */
+.cmdbuildGridNavigationWrapper {
+	display: block;
+	width: 100%;
+	margin: 1em 0em 0em 0em;
+}
+.cmdbuildGridNavigationWrapper .cmdbuildGridFilterContainer {
+	position: relative;
+	float: left;
+	width: 60%;
+	width: calc(100% - 150px);
+}
+.cmdbuildGridNavigationWrapper .cmdbuildGridFilterContainer input[type="text"] {
+	float: left;
+}
+.cmdbuildGridNavigationWrapper .cmdbuildGridNavigationContainer {
+	position: relative;
+	float: right;
+	width: 150px;
+	text-align: right;
+}
+.cmdbuildGridNavigationWrapper .cmdbuildGridNavigationContainer .cmdbuildGridNavigationCount {
+	color: black;
+	margin: 0em;
+}
+.cmdbuildGridNavigationWrapper .cmdbuildGridNavigationContainer button {
+	float: none;
+}
+
+.cmdbuildGroupByHeader.selected,
+.cmdbuildGroupByHeader td {
+	background-color: green !important;
+}
+
+/* ----------------------------------------------------------------------------------------------------------
+ * - Dialog styles
+ * ---------------------------------------------------------------------------------------------------------- */
+.ui-dialog .ui-dialog-content {
+	padding: .5em 1em 74px 1em;
+}
+.ui-dialog .dataTables_scroll table {
+	margin: 0px;
+	padding: 0px;
+}
+.ui-dialog .cmdbuildDialogContentWrapper {
+	height: 100%;
+	overflow-y: auto;
+}
+.ui-dialog .cmdbuildGridNavigationWrapper {
+	right: 0px;
+	width: 100%;
+	padding: .2em 1em 0em 1em;
+	margin: 0px;
+}
+.ui-dialog .cmdbuildFooterButtonsWrapper {
+	position: absolute;
+	right: 0px;
+	bottom: 0px;
+	width: 100%;
+	padding: .2em 0em 0em 0em;
+	margin: 0px;
+	text-align: center;
+}
+
+/* ----------------------------------------------------------------------------------------------------------
+ * - Breadcrumns
+ * ---------------------------------------------------------------------------------------------------------- */
+.ui-breadcrumbs {
+	padding: 0 1em;
+}
+.ui-breadcrumbs .breadcrumbs-item {
+	line-height: 2em;
+	padding: 0;
+	cursor: pointer;
+	font-weight: normal;
+}
+.ui-breadcrumbs .breadcrumbs-item:after {
+	content: " > ";
+}
+.ui-breadcrumbs .breadcrumbs-item.breadcrumbs-item-selected {
+	text-decoration: none;
+	cursor: default;
+	font-weight: bold;
+}
+.ui-breadcrumbs .breadcrumbs-item.breadcrumbs-item-selected:after {
+	content: "";
+}
+
+/* ----------------------------------------------------------------------------------------------------------
+ * - Page title
+ * ---------------------------------------------------------------------------------------------------------- */
+.page-title {
+	font-size: 1.2em;
+	line-height: 2em;
+	font-weight: bold;
+	padding: 0 1em;
+}
+
+/* ----------------------------------------------------------------------------------------------------------
+ * - Data table
+ * ---------------------------------------------------------------------------------------------------------- */
+table.dataTable {
+	font-size: 1em;
+}
+table.dataTable th {
+	line-height: 1.3em;
+}
+
+/* ----------------------------------------------------------------------------------------------------------
+ * - Standard icon buttons
+ * ---------------------------------------------------------------------------------------------------------- */
+.commandcell {
+	padding-right: 20px;
+	width: auto;
+	cursor: pointer;
+}
+.layoutContentIcon,.card {
+	background: transparent url("../images/icon_card.png") right 50%
+		no-repeat;
+}
+.card {
+	cursor: pointer;
+	width: 16px;
+	height: 16px;
+	display: block;
+}
+.arrowTurnLeft,
+.btnIconReply {
+	background: transparent url("../images/icon_reply.png") right 50%
+		no-repeat;
+	cursor: pointer;
+	width: 16px;
+	height: 16px;
+	display: block;
+}
+.refresh {
+	background: transparent url("../images/icon_refresh.png") right 50% no-repeat;
+	cursor: pointer;
+	width: 16px;
+	height: 16px;
+	display: block;
+}
+.bookNextIcon,.processesNextPage {
+	background: transparent url("../images/icon_next.png") right 50%
+		no-repeat;
+}
+.processesNextPage {
+	cursor: pointer;
+	width: 16px;
+	height: 16px;
+	display: block;
+}
+.bookProcessIcon,.processesPreviousPage {
+	background: transparent url("../images/icon_previous.png") right 50%
+		no-repeat;
+}
+.processesPreviousPage {
+	cursor: pointer;
+	width: 16px;
+	height: 16px;
+	display: block;
+}
+.crossIcon,.deleteIconButton {
+	background: transparent url("../images/icon_cancel.png") right 50% no-repeat;
+}
+.deleteIconButton {
+	cursor: pointer;
+	width: 16px;
+	height: 16px;
+	display: block;
+}
+.pencilGoIcon,.processesControlsAdvance {
+	background: transparent url("../images/icon_modify.png") right 50%
+		no-repeat;
+	cursor: pointer;
+	width: 16px;
+	height: 16px;
+	display: block;
+}
+.processesControlsAdvance {
+	cursor: pointer;
+	width: 16px;
+	height: 16px;
+	display: block;
+}
+.zoomIcon,.processesControlsDetail {
+	background: transparent url("../images/icon_details.png") right 50% no-repeat;
+}
+.processesControlsDetail {
+	cursor: pointer;
+	width: 16px;
+	height: 16px;
+	display: block;
+}
+.mailIcon,.processesControlsMail {
+	background: transparent url("../images/icon_mail.png") right 50%
+		no-repeat;
+}
+.processesControlsMail {
+	cursor: pointer;
+	width: 16px;
+	height: 16px;
+	display: block;
+}
+.attachIcon,.processesControlsAttach {
+	background: transparent url("../images/icon_attach.png") right 50% no-repeat;
+}
+.processesControlsAttach {
+	cursor: pointer;
+	width: 16px;
+	height: 16px;
+	display: block;
+}
+.downloadIcon,.processesControlsDownload {
+	background: transparent url("../images/icon_download.png") right 50%
+		no-repeat;
+}
+.processesControlsDownload {
+	cursor: pointer;
+	width: 16px;
+	height: 16px;
+	display: block;
+}
+.hourglassIcon,.processesControlsHistory {
+	background: transparent url("../images/icon_history.png") right 50%
+		no-repeat;
+}
+.processesControlsHistory {
+	cursor: pointer;
+	width: 16px;
+	height: 16px;
+	display: block;
+}
+.pdfIcon,.reportPdf {
+	background: transparent url("../images/icon_file_pdf.png") right 50% no-repeat;
+}
+.reportPdf {
+	cursor: pointer;
+	width: 16px;
+	height: 16px;
+	display: block;
+}
+.odtIcon,.reportOdt {
+	background: transparent url("../images/icon_file_odt.png") right 50% no-repeat;
+}
+.reportOdt {
+	cursor: pointer;
+	width: 16px;
+	height: 16px;
+	display: block;
+}
+.csvIcon,.reportCsv {
+	background: transparent url("../images/icon_file_csv.png") right 50% no-repeat;
+}
+.reportCsv {
+	cursor: pointer;
+	width: 16px;
+	height: 16px;
+	display: block;
+}
+.rtfIcon,.reportRtf {
+	background: transparent url("../images/icon_file_rtf.png") right 50% no-repeat;
+}
+.reportRtf {
+	cursor: pointer;
+	width: 16px;
+	height: 16px;
+	display: block;
+}
+.ui-tooltip {
+	max-width: 700px;
+}
+
+/* ----------------------------------------------------------------------------------------------------------
+ * - Navigation
+ * ---------------------------------------------------------------------------------------------------------- */
+.cmdbuild_navigation {
+	list-style: none;
+}
+.collapsibleNavigation .cmdbuild_navigation ul {
+	display: none;
+	list-style: none;
+}
+.cmdbuild_navigation ul {
+	margin-top: 0em;
+	margin-bottom: 0em;
+}
+.cmdbuild_navigation li {
+	margin: 0.5em 0;
+}
+.collapsibleNavigation .cmdbuild_navigation li {
+	position: relative;
+}
+.collapsibleNavigation .navCommandIcon,.collapsibleNavigation .navBullet
+	{
+	width: 16px;
+	height: 16px;
+	position: absolute;
+	text-align: center;
+	left: -16px;
+	cursor: default;
+}
+.collapsibleNavigation .navCommandIcon {
+	background-image: url("../images/collapsed_nav_icons.gif");
+	background-position: 0 0;
+	cursor: pointer;
+}
+.collapsibleNavigation .navCommandIcon.active {
+	background-position: 0 -16px;
+}

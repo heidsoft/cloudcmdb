@@ -1,0 +1,57 @@
+<DATA>
+	<params>
+		<type>popup</type>
+		<title>Attività corrente</title>
+	</params>
+	<div id="cmdbuildGrid">
+		<onInit>
+			<command>navigate</command>
+			<container>cmdbuildGrid</container>
+			<form>grid</form>
+		</onInit>
+		<form id="grid">
+ 			<params>
+				<type>grid</type>
+				<widgetId>$parameters.widgetId</widgetId>
+				<className>$parameters.widgetClassName</className>
+				<backend>CardList</backend>
+				<nRows>10</nRows>
+				<selection>$parameters.selection</selection>
+				<singleSelect>$parameters.singleSelect</singleSelect>
+				<positionButtons>left</positionButtons>
+<!-- 				<widgetId>$parameters.widgetId</widgetId>"; -->
+				<widgetClassName>$parameters.widgetClassName</widgetClassName>";
+				<singleSelect>$parameters.singleSelect</singleSelect>";
+				<selection>$parameters.selection</selection>";
+				<editable>$parameters.editable</editable>";
+				<readOnly>$parameters.readOnly</readOnly>";			
+			</params>
+			<rowButton id="processesControlsDetail" class="processesControlsDetail" tooltip="Apre l'attività corrente">
+				<onClick>
+					<command>navigate</command>
+					<form>processStep</form>
+					<dialog>processStepDialog</dialog>
+				</onClick>
+				<params>
+					<condition>$parameters.editable</condition>
+				</params>
+			</rowButton>
+		</form>
+	</div>
+	<div class='cmdbuildFooterButtonsWrapper'>
+		<button text="Ok" id="ok">
+			<onClick>
+				<command>dialogClose</command>
+				<dialog>$parameters.dialog</dialog>
+			</onClick>
+		</button>
+		<button text="Cancel" id="cancel">
+			<onClick>
+				<command>dialogCancel</command>
+				<dialog>$parameters.dialog</dialog>
+				<selection>true</selection>
+				<form>grid</form>
+			</onClick>
+		</button>
+	</div>
+</DATA>

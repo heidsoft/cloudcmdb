@@ -1,0 +1,58 @@
+<DATA>
+	<params>
+		<type>popup</type>
+		<title>Gestione allegati</title>
+	</params>
+	<div class="ui-tabs ui-widget ui-widget-content ui-corner-all">
+		<select id="category" fieldName="category" label="Category" interactivity="READ_WRITE_REQUIRED" withReturn="true">
+			<params>
+				<backend>DmsCategory</backend>
+			</params>
+		</select>
+		<textarea id="description" fieldName="description" label="Description" interactivity="READ_WRITE_REQUIRED" cols="80" rows="5" withReturn="true"/>
+		<upload text="Seleziona documento"  fieldName="attachment" id="addAttachement"/>
+		<div class="cmdbuildButtonsWrapper">
+			<button text="Allega" id="allega" withReturn="true">
+				<onClick>
+					<command>attach</command>
+					<id variableId="true">addAttachement</id>
+					<category variableId="true">category</category>
+					<description variableId="true">description</description>
+					<form>formattachements</form>
+					<backend>AttachmentsWidget</backend>
+				</onClick>
+			</button>
+		</div>
+	</div>
+ 	<div id="cmdbuildAttachements">
+		<onInit>
+			<command>navigate</command>
+			<container>cmdbuildAttachements</container>
+			<form>formattachements</form>
+		</onInit>
+		<form id="formattachements" class="cmdbuildCard">
+ 			<params>
+				<type>grid</type>
+				<backend>AttachmentsWidget</backend>
+				<navigation>false</navigation>
+				<nRows>5</nRows>
+			</params>
+			<rowButton id="deleteIconButton" class="deleteIconButton">
+				<onClick>
+					<command>deleteRow</command>
+					<form>formattachements</form>
+					<backend>AttachmentsWidget</backend>
+				</onClick>
+			</rowButton>
+		</form>
+	</div>
+	<div class='cmdbuildFooterButtonsWrapper'>
+		<button text="Ok" id="okAttachementsDialogButton">
+			<onClick>
+				<command>saveattachments</command>
+				<dialog>$parameters.dialog</dialog>
+			</onClick>
+		</button>
+	</div>
+
+</DATA>

@@ -1,0 +1,107 @@
+<html>
+<head>
+<script src="CqlManager.js"></script>
+<script src="Configurator.js"></script>
+</head>
+<body id="body">
+	<script>
+		var context = {
+			xa : {
+				statoAsset : "Stato Asset",
+				descrizioneStato : "Disponibile"
+			},
+			cql : {
+				nomeQueryCQL : "select Email from Personale where Id={client:Richiedente.Id} & Status='A'"
+			}
+		};
+		var attributes = [
+				{
+					name : "esempio 0",
+					filter : "select Email from Role where Code='NomeGruppo'",
+					meta : {}
+				},
+				{
+					name : "esempio 1",
+					filter : "select Email from Role where ToAddresses={cql:nomeQueryCQL.Email}",
+					meta : {}
+				},
+				{
+					name : "esempio 2",
+					filter : "from NomeClasse where Attributo={server:NomeVariabile}",
+					meta : {}
+				},
+				{
+					name : "esempio 3",
+					filter : "select Email from Personale where Id={server:Richiedente.Id} & Status='A'",
+					meta : {}
+				},
+				{
+					name : "esempio 4",
+					filter : "from NomeClasse where Attributo={client:NomeVariabile}",
+					meta : {}
+				},
+				{
+					name : "esempio 5",
+					filter : "(from ClasseProcesso where FlowStatus=/(select \"Id\" from \"LookUp\"	where \"Code\"={xa:codice})/)",
+					meta : {}
+				},
+				{
+					name : "esempio 6",
+					filter : "from NomeClasse where Attributo_lkp={client:lookup.Description}",
+					meta : {}
+				},
+				{
+					name : "esempio 7",
+					filter : "from NomeClasse where Attributo_lkp={server:lookup.Description}",
+					meta : {}
+				},
+				{
+					name : "esempio 8",
+					filter : "from NomeClasse where Attributo_lkp='lookup_description'",
+					meta : {}
+				},
+				{
+					name : "esempio 9",
+					filter : "from Piano where [EdificioPiano].objects(Id=0{client:Assegnatario.Id})",
+					meta : {}
+				},
+				{
+					name : "esempio 10",
+					filter : "(from AssetIT where StatoAsset=/(select \"Id\" from \"LookUp\" where \"Description\"={xa:descrizioneStato} & \"Type\"={xa:statoAsset})/)",
+					meta : {}
+				},
+				{
+					name : "esempio 11",
+					filter : "from Ufficio {js:whereAssegnatario}",
+					meta : {
+						whereAssegnatario : "({cql:queryCausale.Code}!='RIT')?'': {js:whereAssegnatario1}",
+						whereAssegnatario1 : "parseInt({client:Assegnatario.Id})?'where[UfficioDipendente].objects(Id = ' + parseInt({client:Assegnatario.Id}) + ')':''"
+					}
+				}, {
+					name : "esempio 12",
+					filter : "from NomeClasse where Attributo={client:NomeVariabile}",
+					meta : {}
+				} ];
+
+		var output = function(msg) {
+			var body = document.getElementById("body");
+			var str = "<p>" + msg.msg + "</p>";
+			body.innerHTML += str;
+		}
+		var configurator = new Configurator(output);
+		var cqlManager = new CqlManager(configurator);
+		cqlManager.compile("Pippo", attributes);
+		//	cqlManager.commandsTable.debug();
+		cqlManager.variablesTable.debug();
+		for (var i = 0; i < attributes.length; i++) {
+			output({
+				type : "debug",
+				msg : i + ") " + attributes[i].filter + "<br/>"
+						+ cqlManager.commandsTable.resolve("Pippo", "esempio " + i)
+			});
+		}
+		cqlManager.fieldChanged("Pippo", "NomeVariabile");
+		cqlManager.fieldChanged("Pippo", "Assegnatario");
+	</script>
+</body>
+</html>

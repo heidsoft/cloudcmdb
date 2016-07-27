@@ -1,0 +1,9 @@
+/* Tools */
+.x-tool-properties {
+	background-image: url("../images/tools/properties.png") !important;
+	background-position: 0px 0px;
+}
+.x-tool-over .x-tool-properties {
+	background-image: url("../images/tools/properties.png") !important;
+	background-position: 15px 0px;
+}

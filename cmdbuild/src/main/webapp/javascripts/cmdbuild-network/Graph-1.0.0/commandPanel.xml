@@ -1,0 +1,23 @@
+<DATA>
+	<params>
+		<type>popup</type>
+		<title>Commands panel</title>
+	</params>
+
+	<div class="mp-index-details-container details-container">
+		<div id="commandPanelContainer">
+			<onInit>
+				<command>navigate</command>
+				<container>commandPanelContainer</container>
+				<form>commandPanelMain</form>
+			</onInit>
+			<form id="commandPanelMain">
+	 			<params>
+					<type>tabbed</type>
+				</params>
+				<form title="Classes" id="classesGrid" include="classes.xml" class="cmdbuildTabbedForm"/>
+				<form title="All cards" id="cardsGrid" include="cards.xml" class="cmdbuildTabbedForm"/>
+			</form>
+		</div>
+	</div>
+</DATA>

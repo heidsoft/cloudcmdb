@@ -1,0 +1,91 @@
+<DATA>
+	<params>
+		<type>popup</type>
+		<title>Properties</title>
+		<i18nTitle>TITLEPOPUP_PROPERTIES</i18nTitle>
+		<height>400</height>
+	</params>
+	<div id="optionsDiv">
+		<onInit>
+			<command>initOptions</command>
+			<backend>Options</backend>
+		</onInit>
+		<checkbox id="nodeTooltipEnabled" label="Tooltip for entities" i18nLabel="FIELD_TOOLTIP_ENTITIES" text="true">
+			<onClick>
+				<command>boolean</command>
+				<type>nodeTooltipEnabled</type>
+			</onClick>
+		</checkbox>
+		<checkbox id="edgeTooltipEnabled" label="Tooltip for relations" i18nLabel="FIELD_TOOLTIP_EDGES" text="true">
+			<onClick>
+				<command>boolean</command>
+				<type>edgeTooltipEnabled</type>
+			</onClick>
+		</checkbox>
+		<spinner label="Threshold for clustering nodes" i18nLabel="FIELD_CLUSTERING" id="clusteringThreshold" class="optionsSpinner">
+			<params>
+				<backend>Options</backend>
+				<type>clusteringThreshold</type>
+				<value>1</value>
+				<min>2</min>
+				<max>100</max>
+			</params>
+			<onChange>
+				<command>boolean</command>
+				<type>clusteringThreshold</type>
+			</onChange>
+		</spinner>
+		<spinner label="Node dimension" i18nLabel="FIELD_NODE_DIMENSION" id="spriteDimension" class="">
+			<params>
+				<backend>Options</backend>
+				<type>spriteDimension</type>
+				<value>1</value>
+				<min>2</min>
+				<max>500</max>
+			</params>
+			<onChange>
+				<command>boolean</command>
+				<type>spriteDimension</type>
+			</onChange>
+		</spinner>
+		<spinner label="Edge Length" i18nLabel="FIELD_EDGE_LENGTH" id="stepRadius" class="">
+			<params>
+				<backend>Options</backend>
+				<type>stepRadius</type>
+				<value>1</value>
+				<min>2</min>
+				<max>1000</max>
+			</params>
+			<onChange>
+				<command>boolean</command>
+				<type>stepRadius</type>
+			</onChange>
+		</spinner>
+	</div>
+	<div class='cmdbuildFooterButtonsWrapper'>
+		<button text="Preview" i18nText="BUTTON_PREVIEW" id="previewOptionsDialogButton">
+			<onClick>
+				<command>optionsPreview</command>
+				<dialog>commandPanelDialog</dialog>
+			</onClick>
+		</button>
+		<button text="Ok" i18nText="BUTTON_OK" id="okOptionsDialogButton">
+			<onClick>
+				<command>optionsOk</command>
+				<dialog>commandPanelDialog</dialog>
+			</onClick>
+		</button>
+		<button text="Reset" i18nText="BUTTON_RESET" id="resetOptionsDialogButton">
+			<onClick>
+				<command>optionsReset</command>
+				<dialog>commandPanelDialog</dialog>
+			</onClick>
+		</button>
+		<button text="Cancel" i18nText="BUTTON_CANCEL" id="cancelOptionsDialogButton">
+			<onClick>
+				<command>optionsCancel</command>
+				<dialog>commandPanelDialog</dialog>
+			</onClick>
+		</button>
+	</div>
+</DATA>

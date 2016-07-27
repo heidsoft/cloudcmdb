@@ -1,0 +1,51 @@
+<DATA>
+	<params>
+		<type>div</type>
+	</params>
+	<div class="bodyToolbar">
+		<div class="toolbarButton border-box">
+			<span class="btn-onlyclasses" i18nTooltip="TOOLTIP_SHOWONLYCLASSES" tooltip="Show selected items">
+				<onClick>
+					<command>tab</command>
+					<form>classlistform</form>
+					<activeTab>0</activeTab>
+				</onClick>
+			</span>
+		</div>
+	</div>
+	<div class="cmdbuildClear"></div>
+	<div id="superClassesFormContainer">
+		<onInit>
+			<command>navigate</command>
+			<container>superClassesFormContainer</container>
+			<form>superClassesForm</form>
+		</onInit>
+		<form id="superClassesForm">
+	 		<params>
+				<type>classesGrid</type>
+				<backend>ClassesNavigation</backend>
+				<nRows>10</nRows>
+				<hookParent>true</hookParent>
+				<superClasses>true</superClasses>
+					<classId>$superClassesForm.id</classId>
+			</params>
+			<rowButton i18nTooltip="TOOLTIP_ATTRIBUTES" class="grid-btn btn-find" tooltip="Zoom on Card">
+				<onClick>
+					<command>navigateOnAttributes</command>
+					<form>searchOnAttributes</form>
+					<dialog>searchAttributesPanelDialog</dialog>
+					<classId>$superClassesForm.classId</classId>
+					<caller>superClassesForm</caller>
+				</onClick>
+			</rowButton>
+			<onChange>
+				<command>selectClass</command>
+				<node>$superClassesForm.id</node>
+				<superClasses>true</superClasses>
+			</onChange>
+		</form>
+	</div>
+	<form title="Filter" id="searchOnAttributes" include="searchByClassAttributes.xml" class="commandPanelWindow cmdbuildTabbedForm"/> 
+	<dialog id="searchAttributesPanelDialog"></dialog>
+
+</DATA>

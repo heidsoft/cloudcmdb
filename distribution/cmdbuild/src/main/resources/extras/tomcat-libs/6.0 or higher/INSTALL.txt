@@ -1,0 +1,7 @@
+[ITALIANO]
+Librerie aggiuntive per Tomcat
+* Copiare il driver JDBC di PostgreSQL nella cartella "lib" di Tomcat
+
+[ENGLISH]
+Tomcat additional libraries
+* Copy PostgreSQL's JDBC driver within Tomcat "lib" directory

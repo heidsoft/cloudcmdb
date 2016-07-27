@@ -1,0 +1,46 @@
+<DATA>
+	<params>
+		<type>div</type>
+	</params>
+	<div class="bodyToolbar">
+		<div class="toolbarButton border-box">
+			<span class="btn-selecteditems" i18nTooltip="TOOLTIP_SHOWSELECTED" tooltip="Show selected items">
+				<onClick>
+					<command>tab</command>
+					<form>cardlistform</form>
+					<activeTab>1</activeTab>
+				</onClick>
+			</span>
+		</div>
+	</div>
+	<div class="cmdbuildClear"></div>
+	<div id="cardsFormContainer">
+		<onInit>
+			<command>navigate</command>
+			<container>cardsFormContainer</container>
+			<form>cardsForm</form>
+		</onInit>
+		<form id="cardsForm">
+ 			<params>
+				<type>cardsGrid</type>
+				<backend>CardsNavigation</backend>
+				<nRows>10</nRows>
+				<hookParent>true</hookParent>
+			</params>
+				<onChange>
+					<command>selectNode</command>
+					<node>$cardsForm.id</node>
+				</onChange>
+				<onDblClick>
+					<command>zoomOn</command>
+					<node>$cardsForm.id</node>
+				</onDblClick>
+			<rowButton class="grid-btn centerOnSelection" tooltip="Zoom on Card">
+				<onClick>
+					<command>zoomOn</command>
+					<node>$cardsForm.id</node>
+				</onClick>
+			</rowButton>
+		</form>
+	</div>
+</DATA>

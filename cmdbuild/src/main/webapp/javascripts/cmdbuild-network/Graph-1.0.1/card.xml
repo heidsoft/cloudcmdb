@@ -1,0 +1,39 @@
+<DATA>
+	<params>
+		<type>div</type>
+	</params>
+	<div class="bodyToolbar">
+		<div class="toolbarButton border-box">
+			<span class="btn-lessdetails" i18nTooltip="TOOLTIP_SHOWLESSDETAILS"  tooltip="Show less details">
+				<onClick>
+					<command>tab</command>
+					<form>detailform</form>
+					<activeTab>0</activeTab>
+				</onClick>
+			</span>
+		</div>
+	</div>
+	<h1 id="cmdbuildCardTitle" class="pageTitle">PAGE TITLE</h1>
+	<div class="cmdbuildClear"></div>
+ 	<div id="cmdbuildCard">
+		<onInit>
+			<command>navigate</command>
+			<container>cmdbuildCard</container>
+			<form>formcard</form>
+			<fromObserving>true</fromObserving>
+		</onInit>
+		<form id="formcard" class="cmdbuildCard">
+ 			<observe container="cmdbuildCard">
+				<dummy1>$selectedForm.dummy</dummy1> 
+			</observe>
+ 			<params>
+				<type>form</type>
+				<backend>GraphCard</backend>
+				<classId>$selectedForm.classId</classId>
+				<cardId>$selectedForm.id</cardId>
+				<readonly>true</readonly>
+				<onInitComplete>cmdbUpdateCardTitle</onInitComplete>
+			</params>
+		</form>
+	</div>
+</DATA>

@@ -1,0 +1,39 @@
+.splash-screen,
+.splash-screen-administration {
+	background: url("../images/splash.png") no-repeat top left;
+	display: block;
+	height: 217px;
+	width: 381px;
+}
+.splash-screen-administration { background-image: url("../images/splash-gray.png"); }
+.splash-screen .text-container,
+.splash-screen-administration .text-container {
+	color: #666666;
+	font-family: sans-serif;
+	font-size: 11px;
+	height: 63px;
+	line-height: 1.4em;
+	margin: 0px;
+	padding: 135px 0px 0px 10px;
+	width: 395px;
+}
+.splash-screen .description,
+.splash-screen-administration .description {
+	color: #1c4196;
+	font-size: 14px;
+	letter-spacing: -.5px;
+	margin: 0px 0px 3px 0px;
+	padding: 8px 0px 0px 0px;
+}
+.splash-screen .copyright,
+.splash-screen-administration .copyright {
+	float: left;
+	font-size: 9px;
+}
+.splash-screen .version,
+.splash-screen-administration .version {
+	color: #1c4196;
+	float: right;
+	font-size: 10px;
+	margin: 38px 21px 0px 0px;
+}

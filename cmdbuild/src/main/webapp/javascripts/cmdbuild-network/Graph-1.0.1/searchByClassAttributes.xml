@@ -1,0 +1,57 @@
+<DATA>
+	<params>
+		<type>popup</type>
+		<title>Attributes</title>
+	</params>
+	<div id="mainSearchAttributesFormContainerGrid">
+	<onInit>
+		<command>showSearchByAttributes</command>
+		<classId>$parameters.classId</classId>
+		<navigationForm>formmaincardgridSearchAttributes</navigationForm>
+		<navigationContainer>mainSearchAttributesFormContainerGrid</navigationContainer>
+	</onInit>
+		<form id="formmaincardgridSearchAttributes" class="cmdbuildCard">
+			<params>
+				<type>div</type>
+			</params>
+			<select label="Add attribute" i18nLabel="LABEL_FILTERATTRIBUTE" id="SearchAttributes4Class" class="optionsSelect">
+				<params>
+					<backend>FilterAttributes</backend>
+					<classId>$parameters.classId</classId>
+				</params>
+				<onChange>
+					<command>addFilterAttribute</command>
+					<value>SearchAttributes4Class</value>
+					<navigationForm>filterBySearchAttributesForm</navigationForm>
+					<navigationContainer>filterBySearchAttributesContainer
+					</navigationContainer>
+					<classId>$parameters.classId</classId>
+				</onChange>
+			</select>
+		</form>
+	</div> 
+
+	<h1 id="cmdbuildSearchClassDescription" class="pageTitle">PAGE TITLE</h1>
+	<div id="filterBySearchAttributesContainer">
+		<form id="filterBySearchAttributesForm" class="cmdbuildCard">
+  			<params>
+				<type>formAttributesFilter</type>
+				<backend>FilterAttributesNavigation</backend>
+				<classId>$parameters.classId</classId>
+				<navigationForm>filterBySearchAttributesForm</navigationForm>
+				<navigationContainer>filterBySearchAttributesContainer</navigationContainer>
+				<idSuffix>search</idSuffix>
+			</params>
+		</form>
+	</div>
+
+	<div class='cmdbuildFooterButtonsWrapper'>
+		<button i18nText="BUTTON_OK" text="Ok" id="okSearchAttributesDialogButton">
+			<onClick>
+				<command>closeSearchAttributesDialog</command>
+				<dialog>searchAttributesPanelDialog</dialog>
+				<classId>$parameters.classId</classId>
+			</onClick>
+		</button>
+	</div>
+</DATA>

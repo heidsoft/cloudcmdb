@@ -1,0 +1,41 @@
+<DATA>
+	<params>
+		<type>div</type>
+	</params>
+	<div class="bodyToolbar">
+		<div class="toolbarButton border-box">
+			<span class="btn-allitems" i18nTooltip="TOOLTIP_SHOWALL" tooltip="Show all items">
+				<onClick>
+					<command>tab</command>
+					<form>cardlistform</form>
+					<activeTab>0</activeTab>
+				</onClick>
+			</span>
+		</div>
+	</div>
+	<div class="cmdbuildClear"></div>
+	<div id="selectedFormContainer">
+		<onInit>
+			<command>navigate</command>
+			<container>selectedFormContainer</container>
+			<form>selectedForm</form>
+		</onInit>
+		<form id="selectedForm">
+ 			<params>
+				<type>selectedGrid</type>
+				<backend>SelectedNavigation</backend>
+				<nRows>10</nRows>
+			</params>
+			<onDblClick>
+					<command>zoomOn</command>
+					<node>$selectedForm.id</node>
+				</onDblClick>
+			<rowButton class="grid-btn centerOnSelection" tooltip="Center the layout on this item">
+				<onClick>
+					<command>zoomOn</command>
+					<node>$selectedForm.id</node>
+				</onClick>
+			</rowButton>
+		</form>
+	</div>
+</DATA>

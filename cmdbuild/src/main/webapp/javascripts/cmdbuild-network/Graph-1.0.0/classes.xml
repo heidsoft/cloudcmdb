@@ -1,0 +1,24 @@
+<DATA>
+	<params>
+		<type>div</type>
+	</params>
+	<div id="classesFormContainer">
+		<onInit>
+			<command>navigate</command>
+			<container>classesFormContainer</container>
+			<form>classesForm</form>
+		</onInit>
+		<form id="classesForm">
+	 		<params>
+				<type>classesGrid</type>
+				<backend>ClassesNavigation</backend>
+				<nRows>10</nRows>
+				<hookParent>true</hookParent>
+			</params>
+			<onChange>
+				<command>selectClass</command>
+				<node>$classesForm.id</node>
+			</onChange>
+		</form>
+	</div>
+</DATA>

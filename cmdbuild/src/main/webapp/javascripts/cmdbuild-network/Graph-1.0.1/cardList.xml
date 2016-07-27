@@ -1,0 +1,19 @@
+<DATA>
+	<params>
+		<type>div</type>
+	</params>
+	<div id="cardListContainer">
+		<onInit>
+			<command>navigate</command>
+			<container>cardListContainer</container>
+			<form>cardlistform</form>
+		</onInit>
+		<form id="cardlistform">
+ 			<params>
+				<type>tabbed</type>
+			</params>
+ 			<form title="Cards" id="cards" include="cards.xml" invisible="true" class="commandPanelWindow cmdbuildTabbedForm"/> 
+ 			<form title="Selected" id="selected" include="selected.xml" invisible="true" class="commandPanelWindow cmdbuildTabbedForm"/>
+		</form>
+	</div>
+</DATA>	

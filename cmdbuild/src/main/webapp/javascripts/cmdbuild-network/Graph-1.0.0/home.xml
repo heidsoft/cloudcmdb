@@ -1,0 +1,229 @@
+<DATA>
+	<params>
+		<type>div</type>
+	</params>
+	<div class="cmdbuild-grid-col cmdbuild-grid-span_8">
+		<canvas3d id="myFirstCanvas" class="canvas"/>
+	</div>
+	<div class="cmdbuild-grid-col cmdbuild-grid-span_4">
+		<div id="cmdbuildMainForm" class="cmdbuildMainColumnWrapper mainContainer border-box">
+			<!-- HEADER -->
+			<div id="buttonsPanelContainer" class="ui-state-default ui-corner-all allWidth headerToolbar mainContainerHeader border-box">
+				<div class="leftToolbarButtons">
+					<div class="toolbarButton border-box">
+						<span class="undo" i18nTooltip="TOOLTIP_UNDO" tooltip="Undo the last operation">
+							<onClick>
+								<command>undo</command>
+							</onClick>
+						</span>
+					</div>
+					<div class="toolbarButton border-box">
+						<span class="layout" i18nTooltip="TOOLTIP_APPLYLAYOUT" tooltip="Apply the current layout">
+							<onClick>
+								<command>doLayout</command>
+							</onClick>
+						</span>
+					</div>
+					<div class="toolbarButton border-box">
+						<span class="stop" i18nTooltip="TOOLTIP_STOP" tooltip="Stop the current operation when possible">
+							<onClick>
+								<command>stopCommands</command>
+							</onClick>
+						</span>
+					</div>
+					<div class="toolbarSeparator"></div>
+					<div class="toolbarButton border-box">
+						<span class="centerOnViewer" i18nTooltip="TOOLTIP_CENTER" tooltip="Center the image">
+							<onClick>
+								<command>centerOnViewer</command>
+							</onClick>
+						</span>
+					</div>
+					<div class="toolbarButton border-box">
+						<span class="centerOnSelection" i18nTooltip="TOOLTIP_CENTERSELECTION" tooltip="Center the layout on selection">
+							<onClick>
+								<command>zoomOn</command>
+								<node>$selectedForm.id</node>
+							</onClick>
+						</span>
+					</div>
+					<div class="toolbarSeparator"></div>
+				</div>
+				<div class="rightToolbarButtons">
+					<div class="toolbarSeparator"></div>
+					<div class="toolbarButton border-box">
+						<span class="selectAll" i18nTooltip="TOOLTIP_SELECTALL" tooltip="Select all nodes">
+							<onClick>
+								<command>selectAll</command>
+							</onClick>
+						</span>
+					</div>
+					<div class="toolbarButton border-box">
+						<span class="deleteSelected" i18nTooltip="TOOLTIP_DELETESELECTED" tooltip="Delete selected nodes">
+							<onClick>
+								<command>deleteSelection</command>
+								<selected>true</selected>
+							</onClick>
+						</span>
+					</div>
+					<div class="toolbarButton border-box">
+						<span class="deleteUnselected" i18nTooltip="TOOLTIP_DELETEUNSELECTED" tooltip="Delete unselected nodes">
+							<onClick>
+								<command>deleteSelection</command>
+								<selected>false</selected>
+							</onClick>
+						</span>
+					</div>
+					<div class="toolbarButton border-box">
+						<span class="openSelected" i18nTooltip="TOOLTIP_EXPLODE" tooltip="Open selected nodes">
+							<onClick>
+								<command>openSelection</command>
+							</onClick>
+						</span>
+					</div>
+					<div class="toolbarSeparator"></div>
+					<div class="toolbarButton border-box">
+						<span class="navigateOnNode" i18nTooltip="TOOLTIP_REOPEN" tooltip="Reopen the graph from this node">
+							<onClick>
+								<command>navigateOnNode</command>
+							</onClick>
+						</span>
+					</div>
+					<div class="toolbarButton border-box">
+						<span class="subGraph" i18nTooltip="TOOLTIP_SUBGRAPH" tooltip="Select the sub graph that contains the selected elements">
+							<onClick>
+								<command>connect</command>
+							</onClick>
+						</span>
+					</div>
+					<div class="toolbarButton border-box">
+						<navigationTreesBtnMenu class="subGraph" id="navigationTreeCombo">
+							<params>
+								<tooltip>Choose navigation tree</tooltip>
+								<i18nTooltip>TOOLTIP_TREE</i18nTooltip>
+							</params>
+						</navigationTreesBtnMenu>
+					</div>
+				</div>
+			</div>
+			<!-- BODY -->
+			<div id="commandPanelContainer" class="mainContainerBody border-box">
+				<onInit>
+					<command>navigate</command>
+					<container>commandPanelContainer</container>
+					<form>commandPanelMain</form>
+				</onInit>
+				<form id="commandPanelMain">
+		 			<params>
+						<type>tabbed</type>
+					</params>
+					<form i18nTitle="TAB_CARD" title="Card" id="detail" include="detail.xml" class="commandPanelWindow cmdbuildTabbedForm"/>
+					<form i18nTitle="TAB_CARDS" title="Card list" id="cardList" include="cardList.xml" class="commandPanelWindow cmdbuildTabbedForm"/>
+					<form i18nTitle="TAB_CLASSES" title="Classes" id="classesGrid" include="classes.xml" class="commandPanelWindow cmdbuildTabbedForm"/>
+				</form>
+			</div>
+			<!-- FOOTER -->
+			<div class="mainContainerFooter border-box">
+				<div id="statusPanelContainer" class="ui-widget">
+					<counter id="nodesCounter" i18nText="LABEL_NODES" text="Nodes:">
+			 			<params>
+							<type>nodes</type>
+						</params>
+					</counter>
+					<counter id="edgesCounter" i18nText="LABEL_EDGES" text="Edges:">
+			 			<params>
+							<type>edges</type>
+						</params>
+					</counter>
+					<counter id="selectedCounter" i18nText="LABEL_SELECTED" text="Selected:">
+			 			<params>
+							<type>selected</type>
+						</params>
+					</counter>
+					<display id="treeDisplay" i18nText="LABEL_TREE" text="Tree:">
+					</display>
+				</div>
+				<div id="optionsPanelContainer" 
+					class="cmdbuildGridFilterContainer ui-state-default ui-corner-all allWidth">
+					<div class="toolbarButton footerToolbar border-box">
+						<span class="properties" i18nTooltip="TOOLTIP_PROPERTIESPANEL" tooltip="Open the properties panel">
+							<onClick>
+								<command>navigate</command>
+								<form>options</form>
+								<dialog>commandPanelDialog</dialog>
+							</onClick>
+						</span>
+					</div>
+					<div class="toolbarButton footerToolbar border-box">
+						<span class="filter" i18nTooltip="TOOLTIP_FILTERPANEL" tooltip="Open the filter panel">
+							<onClick>
+								<command>navigate</command>
+								<form>filter</form>
+								<dialog>commandPanelDialog</dialog>
+							</onClick>
+						</span>
+					</div>
+					<div class="toolbarButton footerToolbar border-box">
+						<toggleTooltips>
+							<params>
+								<tooltip>Enable/disable tooltips on graph</tooltip>
+								<i18nTooltip>TOOLTIP_TOOLTIPS</i18nTooltip>
+							</params>
+						</toggleTooltips>
+					</div>
+					<div class="toolbarSeparator"></div>
+					<div class="footerToolbarItem buttonset">
+						<buttonset label="Labels" i18nLabel="BUTTON3STATE_LABELS" id="displayLabel" class="labelsMultistate">
+							<params>
+								<none>LOOKUP_LABELSNONE</none>
+								<selected>LOOKUP_LABELSSELECTED</selected>
+								<all>LOOKUP_LABELSALL</all>
+							</params>
+							<onChange>
+								<command>boolean</command>
+								<type>displayLabel</type>
+							</onChange>
+						</buttonset>
+					</div>
+					<div class="toolbarSeparator"></div>
+					<div class="footerToolbarItem">
+						<spinner label="Levels" i18nLabel="SPINNER_LEVELS" id="baseLevel" class="optionsSpinner">
+							<params>
+								<backend>Options</backend>
+								<type>baseLevel</type>
+								<value>1</value>
+								<min>1</min>
+								<max>10</max>
+							</params>
+							<onChange>
+								<command>boolean</command>
+								<type>baseLevel</type>
+							</onChange>
+						</spinner>
+					</div>
+					<div class="toolbarSeparator"></div>
+					<div class="footerToolbarItem">
+						<div class="openLevelsSliderContainer">
+							<slider label="Open on levels" i18nLabel="SLIDER_LEVELS" id="openLevelsSlider" class="">
+								<onChange>
+									<command>slidingLevels</command>
+								</onChange>
+							</slider>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<form title="Command panel" id="commandPanel" include="commandPanel.xml" class="cmdbuildTabbedForm"/>
+	</div>
+	
+	<div>
+		<onInit>
+			<command>homepageready</command>
+		</onInit>
+	</div>
+	
+	<form title="Options" id="options" include="options.xml" invisible="true" class="commandPanelWindow cmdbuildTabbedForm"/> 
+	<form title="Filter" id="filter" include="filter.xml" invisible="true" class="commandPanelWindow cmdbuildTabbedForm"/> 
+	<dialog id="commandPanelDialog"></dialog>
+</DATA>	

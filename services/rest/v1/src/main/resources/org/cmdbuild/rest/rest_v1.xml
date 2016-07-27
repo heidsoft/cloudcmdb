@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:jaxrs="http://cxf.apache.org/jaxrs"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://cxf.apache.org/jaxrs http://cxf.apache.org/schemas/jaxrs.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+	<context:component-scan
+		base-package="org.cmdbuild.service.rest.v1.cxf.configuration" />
+
+	<import resource="classpath:META-INF/cxf/cxf.xml" />
+	<import resource="classpath:META-INF/cxf/cxf-extension-*.xml" />
+	<import resource="classpath:META-INF/cxf/cxf-servlet.xml" />
+
+	<bean id="jaxbProvider" class="org.apache.cxf.jaxrs.provider.JAXBElementProvider" />
+	<bean id="jsonProvider" class="org.codehaus.jackson.jaxrs.JacksonJaxbJsonProvider" />
+	<bean id="wadlProvider" class="org.apache.cxf.jaxrs.model.wadl.WadlGenerator">
+		<property name="linkJsonToXmlSchema" value="true" />
+	</bean>
+
+	<jaxrs:server id="rest_v1" address="/rest/v1">
+		<jaxrs:providers>
+			<ref bean="jaxbProvider" />
+			<ref bean="jsonProvider" />
+			<ref bean="wadlProvider" />
+			<ref bean="v1_tokenHandler" />
+			<ref bean="v1_headerResponseHandler" />
+		</jaxrs:providers>
+		<jaxrs:serviceBeans>
+			<ref bean="v1_attachmentsConfiguration" />
+			<ref bean="v1_cardAttachments" />
+			<ref bean="v1_cards" />
+			<ref bean="v1_classes" />
+			<ref bean="v1_classAttributes" />
+			<ref bean="v1_classPrivileges" />
+			<ref bean="v1_domains" />
+			<ref bean="v1_domainAttributes" />
+			<ref bean="v1_relations" />
+			<ref bean="v1_impersonate" />
+			<ref bean="v1_lookupTypes" />
+			<ref bean="v1_lookupTypeValues" />
+			<ref bean="v1_menu" />
+			<ref bean="v1_processAttributes" />
+			<ref bean="v1_processes" />
+			<ref bean="v1_processesConfiguration" />
+			<ref bean="v1_processInstanceActivities" />
+			<ref bean="v1_processInstanceAttachments" />
+			<ref bean="v1_processInstances" />
+			<ref bean="v1_processStartActivities" />
+			<ref bean="v1_sessions" />
+		</jaxrs:serviceBeans>
+		<jaxrs:extensionMappings>
+			<entry key="xml" value="application/xml" />
+			<entry key="json" value="application/json" />
+		</jaxrs:extensionMappings>
+	</jaxrs:server>
+
+</beans>

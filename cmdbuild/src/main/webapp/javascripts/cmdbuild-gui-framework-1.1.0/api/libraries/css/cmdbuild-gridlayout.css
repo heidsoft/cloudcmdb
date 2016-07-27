@@ -1,0 +1,134 @@
+/*	MAIN CONTAINER */
+.cmdbuild-grid-container {
+	margin: 0 auto;
+}
+
+/*	SELF CLEARING FLOATS - CLEARFIX METHOD */
+.cmdbuild-grid-container:after,
+.cmdbuild-grid-row:after,
+.cmdbuild-grid-col:after,
+.cmdbuild-grid-clr:after,
+.cmdbuild-grid-group:after {
+	content: "";
+	display: table;
+	clear: both;
+}
+
+/* 	DEFAULT ROW STYLES 
+	Set bottom padding according to preference */
+.cmdbuild-grid-row {
+	padding-bottom: 0em;
+}
+
+/* DEFAULT COLUMN STYLES */
+.cmdbuild-grid-col {
+	display: block;
+	float: left;
+	width: 100%;
+}
+
+.cmdbuild-grid-gutters .cmdbuild-grid-col {
+	margin-left: 2%;
+}
+
+.cmdbuild-grid-gutters .cmdbuild-grid-col:first-child {
+	margin-left: 0;
+}
+
+/*	COLUMN WIDTH ON DISPLAYS +768px 
+	You might need to play with media queries here to suite your design. */
+.cmdbuild-grid-span_1 {
+	width: 8.33333333333%;
+}
+
+.cmdbuild-grid-span_2 {
+	width: 16.6666666667%;
+}
+
+.cmdbuild-grid-span_3 {
+	width: 25%;
+}
+
+.cmdbuild-grid-span_4 {
+	width: 33.3333333333%;
+}
+
+.cmdbuild-grid-span_5 {
+	width: 41.6666666667%;
+}
+
+.cmdbuild-grid-span_6 {
+	width: 50%;
+}
+
+.cmdbuild-grid-span_7 {
+	width: 58.3333333333%;
+}
+
+.cmdbuild-grid-span_8 {
+	width: 66.6666666667%;
+}
+
+.cmdbuild-grid-span_9 {
+	width: 75%;
+}
+
+.cmdbuild-grid-span_10 {
+	width: 83.3333333333%;
+}
+
+.cmdbuild-grid-span_11 {
+	width: 91.6666666667%;
+}
+
+.cmdbuild-grid-span_12 {
+	width: 100%;
+}
+
+.cmdbuild-grid-gutters .cmdbuild-grid-span_1 {
+	width: 6.5%;
+}
+
+.cmdbuild-grid-gutters .cmdbuild-grid-span_2 {
+	width: 15.0%;
+}
+
+.cmdbuild-grid-gutters .cmdbuild-grid-span_3 {
+	width: 23.5%;
+}
+
+.cmdbuild-grid-gutters .cmdbuild-grid-span_4 {
+	width: 32.0%;
+}
+
+.cmdbuild-grid-gutters .cmdbuild-grid-span_5 {
+	width: 40.5%;
+}
+
+.cmdbuild-grid-gutters .cmdbuild-grid-span_6 {
+	width: 49.0%;
+}
+
+.cmdbuild-grid-gutters .cmdbuild-grid-span_7 {
+	width: 57.5%;
+}
+
+.cmdbuild-grid-gutters .cmdbuild-grid-span_8 {
+	width: 66.0%;
+}
+
+.cmdbuild-grid-gutters .cmdbuild-grid-span_9 {
+	width: 74.5%;
+}
+
+.cmdbuild-grid-gutters .cmdbuild-grid-span_10 {
+	width: 83.0%;
+}
+
+.cmdbuild-grid-gutters .cmdbuild-grid-span_11 {
+	width: 91.5%;
+}
+
+.cmdbuild-grid-gutters .cmdbuild-grid-span_12 {
+	width: 100%;
+}

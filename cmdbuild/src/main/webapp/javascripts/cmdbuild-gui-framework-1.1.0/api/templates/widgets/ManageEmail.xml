@@ -1,0 +1,158 @@
+<DATA>
+	<params>
+		<type>popup</type>
+		<title>Mail</title>
+	</params>
+ 	<div id="cmdbuildMail">
+		<onInit>
+			<command>navigate</command>
+			<container>cmdbuildMail</container>
+			<form>formmail</form>
+		</onInit>
+		<form id="formmail" class="cmdbuildCard">
+			<params>
+				<type>grid</type>
+				<backend>MailList</backend>
+				<nRows>5</nRows>
+				<sort>Date</sort>
+				<direction>desc</direction>
+				<navigation>false</navigation>
+				<scroll>true</scroll>
+				<scrollHeight>220</scrollHeight>
+				<processType>$parameters.processType</processType>
+				<processInstanceId>$parameters.processCard</processInstanceId>
+				<groupBy>status</groupBy>
+				<formData>$parameters.formData</formData>
+			</params>
+			<rowButton id="refresh" class="refresh" tooltip="Applicate template">
+				<onClick>
+					<command>refreshMail</command>
+					<form>formmail</form>
+					<formData variableId="true">$parameters.formData</formData>
+					<navigationContainer variableId="true">cmdbuildMail</navigationContainer>
+					<navigationForm variableId="true">formmail</navigationForm>
+				</onClick>
+			</rowButton>
+			<rowButton id="btnIconReply" class="btnIconReply" tooltip="Reply">
+				<onClick>
+					<command>replyMail</command>
+					<form>formmail</form>
+					<formData variableId="true">$parameters.formData</formData>
+					<navigationDialog variableId="true">editMailFormDialog</navigationDialog>
+					<navigationForm variableId="true">editMailForm</navigationForm>
+				</onClick>
+				<params>
+					<mailStatus>reply</mailStatus>
+				</params>
+			</rowButton>
+			<rowButton id="pencilGoIcon" class="pencilGoIcon" tooltip="Modify mail">
+				<onClick>
+					<command>navigate</command>
+					<form>editMailForm</form>
+					<dialog>editMailFormDialog</dialog>
+				</onClick>
+				<params>
+					<mailStatus>modify</mailStatus>
+				</params>
+			</rowButton>
+			<rowButton id="deleteIconButton" class="deleteIconButton" tooltip="Delete mail">
+				<onClick>
+					<command>deleteMail</command>
+					<formData variableId="true">$parameters.formData</formData>
+					<cardId variableId="true">$formmail._id</cardId>
+					<container variableId="true">cmdbuildMail</container>
+					<form variableId="true">formmail</form>
+				</onClick>
+			</rowButton>
+		</form>
+	</div>
+	<div id="visualizeemail" class="cmdbuildTabbedForm">
+		<div id="innerVisualizeEMailContainer">
+			<onInit>
+				<command>navigate</command>
+				<form>visualizemail</form>
+				<container>innerVisualizeEMailContainer</container>
+			</onInit>
+			<form id="visualizemail" class="cmdbuildCard">
+				<observe container="innerVisualizeEMailContainer">
+					<cardId variableId="true">$formmail._id</cardId>
+				</observe>
+				<params>
+					<type>form</type>
+					<backend>Mail</backend>
+					<cardId variableId="true">$formmail._id</cardId>
+					<readonly>true</readonly>
+					<formData>$parameters.formData</formData>
+				</params>
+			</form>
+		</div>
+		<div class="cmdbuildFooterButtonsWrapper">
+<!-- 			<button text="Modify" id="modifyMailDialogButton"> -->
+<!-- 				<onClick> -->
+<!-- 					<command>navigate</command> -->
+<!-- 					<form>editMailForm</form> -->
+<!-- 					<dialog>editMailFormDialog</dialog> -->
+<!-- 				</onClick> -->
+<!-- 				<params> -->
+<!-- 					<mailStatus>modify</mailStatus> -->
+<!-- 				</params> -->
+<!-- 			</button> -->
+			<button text="New" id="newMailDialogButton">
+				<onClick>
+					<command>navigate</command>
+					<form>editMailForm</form>
+					<dialog>editMailFormDialog</dialog>
+				</onClick>
+				<params>
+					<mailStatus>new</mailStatus>
+				</params>
+			</button>
+			<button text="Close" id="closeMailDialogButton">
+				<onClick>
+					<command>dialogClose</command>
+					<dialog>$parameters.dialog</dialog>
+				</onClick>
+			</button>
+		</div>
+	</div>
+	<form title="Edit Mail" id="editMailForm" >
+		<params>
+			<type>popup</type>
+			<title>Edit Mail</title>
+		</params>
+		<div id="innerEditEMailContainer">
+			<onInit>
+				<command>navigate</command>
+				<form>editmail</form>
+				<container>innerEditEMailContainer</container>
+			</onInit>
+			<form id="editmail" class="cmdbuildCard">
+				<params>
+					<type>form</type>
+					<backend>Mail</backend>
+					<cardId variableId="true">$formmail._id</cardId>
+					<formData>$parameters.formData</formData>
+					<mailStatus>$parameters.mailStatus</mailStatus>
+				</params>
+			</form>
+		</div>
+		<div class="cmdbuildFooterButtonsWrapper">
+			<button text="Ok" id="okMailDialogButton">
+				<onClick>
+					<command>save</command>
+					<form>editmail</form>
+					<dialog variableId="true">editMailFormDialog</dialog>
+					<navigationContainer variableId="true">cmdbuildMail</navigationContainer>
+					<navigationForm variableId="true">formmail</navigationForm>
+				</onClick>
+			</button>
+			<button text="Cancel" id="cancelMailDialogButton">
+				<onClick>
+					<command>dialogClose</command>
+					<dialog variableId="true">editMailFormDialog</dialog>
+				</onClick>
+			</button>
+		</div>
+	</form>
+	<dialog id="editMailFormDialog"></dialog>
+</DATA>

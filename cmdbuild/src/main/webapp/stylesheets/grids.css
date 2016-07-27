@@ -1,0 +1,108 @@
+.x-grid3-dirty-cell { background-image: none !important; }
+.x-grid3-row-alt { background-color: #f5f5f5 !important; }
+.x-grid3-row td,
+.x-grid3-summary-row td { vertical-align: middle !important; }
+.x-grid3-col-imagecolumn {
+	padding: 0px !important;
+	margin: 0px;
+}
+.numeric_column{
+	text-align: right;
+	padding-right: 5px;
+}
+
+/* PatchManager styles */
+	.cm-patch-manager-grid-empty-cell { color: #666666 !important; }
+
+/* Different background for the even rows */
+	.x-grid-row-alt .x-grid-cell,
+	.x-grid-row-alt .x-grid-rowwrap-div { background-color: #f5f5f5 !important; }
+
+/* Grid actions */
+	.action-filter-set,
+	.action-filter-remove {
+		padding: 0px 1em;
+		cursor: pointer;
+	}
+
+/* Ext.ux.CheckColumn */
+	.x-grid-checkheader {
+		height: 14px;
+		background: transparent url("../images/checkcolumn/unchecked.gif") no-repeat 50% -2px;
+	}
+	.x-grid-checkheader-checked { background-image: url("../images/checkcolumn/checked.gif"); }
+	.x-grid-checkheader-editor .x-form-cb-wrap { text-align: center; }
+
+/* Activity rows */
+	.x-grid-row-expander { margin: 0px !important; }
+	.cm_activity_row {
+		background-color: #fafafa;
+		border-top: 1px solid #eeeeee;
+		border-left: 0.5em solid #d1d1d1;
+		padding: 0.2em 0.2em 0.2em 1em !important;
+		margin: 0px !important;
+	}
+	.cm_activity_row_label { font-weight: bold; }
+	.cm_activity_row_selected {
+		background-color: #dfe8f6;
+		border-top: 1px dotted #a3bae9 !important;
+		border-bottom: 1px dotted #a3bae9 !important;
+	}
+	.cm_activity_row_over { background-color: #eeeeee; }
+	.cm_activity_row_not_editable { color: #666666; }
+
+/* FilterMenuButtonGrid */
+	.filterMenuButtonGrid .x-grid-cell-inner {
+		height:  auto !important;
+		width:  auto !important;
+		overflow: hidden !important;
+	}
+	.filterMenuButtonGrid img { padding: 3px 2px; }
+	.filterMenuButtonGrid-name {
+		font-size: 1.1em;
+		margin: 0px !important;
+		padding: 0.2em 0px 0.2em 0px;
+	}
+	.filterMenuButtonGrid-description { color: #666666; }
+
+/*
+ * History
+ */
+	.cmdb-history-grid .x-grid-rowbody p {
+		margin: 0px !important;
+		padding: 0px 0px 0px 35px;
+		white-space: nowrap;
+	}
+	.cmdb-history-grid .x-grid-rowbody p.changedRow {
+		background-color: #e9f4e7;
+		color: #0d5f07;
+	}
+
+/* Validation classes */
+	.x-grid-invalid { border-color: #ff0000 !important; }
+
+/* Grid classes */
+	.grid-row-disabled { color: #666666 !important; }
+
+/* Grid icons */
+	.x-grid-cell-inner {
+		padding: 3px 6px;
+		height: 18px !important;
+		overflow: hidden !important;
+	}
+	.x-grid-cell-inner .x-item-disabled { cursor: default !important; }
+	.x-grid-group-hd .x-grid-cell-inner { height: 30px !important; } /* Overrides the height of x-grid-cell-inner*/
+	.cm-grid-autoheight .x-grid-cell-inner { height: auto !important; }
+	.grid-button .x-grid-cell-inner { padding: 0px 6px; }
+
+/* FIX: empty ending row in grids */
+	.x-grid-row-summary { display: none; }
+
+/* Validated cell elements */
+	.x-grid-invalid-cell-error {
+		background: #ffffff url("../images/grid/invalid_line.gif") repeat-x bottom !important;
+		border: 1px solid #cc3300 !important;
+	}
+
+/* Checkbox selection model */
+	.x-grid-row-checker { margin: 0px auto; }

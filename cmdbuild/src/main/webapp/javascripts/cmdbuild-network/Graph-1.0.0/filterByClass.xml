@@ -1,0 +1,21 @@
+<DATA>
+	<params>
+		<type>div</type>
+	</params>
+	<div id="filterByClassFormContainer">
+		<onInit>
+			<command>navigate</command>
+			<container>filterByClassFormContainer</container>
+			<form>filterByClassForm</form>
+		</onInit>
+		<form id="filterByClassForm">
+	 		<params>
+				<type>classesGrid</type>
+				<backend>ClassesFilter</backend>
+				<nRows>10</nRows>
+				<selection>true</selection>
+<!-- 				<hookParent>true</hookParent> -->
+			</params>
+		</form>
+	</div>
+</DATA>

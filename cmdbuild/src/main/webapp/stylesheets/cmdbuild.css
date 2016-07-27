@@ -1,0 +1,495 @@
+@import url("./flags.css");
+@import url("./footer.css");
+@import url("./grids.css");
+@import url("./icons.css");
+@import url("./panels.css");
+@import url("./splashScreen.css");
+@import url("./trees.css");
+@import url("./windows.css");
+
+html {
+	height: 100%;
+	width: 100%;
+}
+
+body {
+	padding: 0;
+	margin: 0;
+	overflow: hidden;
+	background-color: #ffffff;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	position: absolute;
+	top: 0pt;
+	left: 0pt;
+	height: 100%;
+	width: 100%;
+}
+
+iframe { border: none; }
+
+em { font-style: oblique !important; }
+
+.cmdb-tab p {
+	color: #15428B;
+	background-image: url("../images/tabs/pressedbg.png");
+	background-color: #d9eafe;
+	background-repeat: repeat-x;
+	font: 11px tahoma, arial, helvetica;
+	padding: 4px 20px 4px 18px;
+	border: 1px solid #99bbe8;
+	border-left: none;
+	cursor: pointer;
+	border-radius: 0 5px 5px 0;
+	-moz-border-radius: 0 5px 5px 0;
+	white-space: nowrap;
+}
+
+.cmdb-pressed-tab p {
+	background-image: url("../images/tabs/currentbg.png");
+	background-color: #d9eafe;
+	font-weight: bold;
+}
+
+.cmdb-tab-icon {
+	float: left;
+	height: 16px;
+	margin: 14px 4px;
+	width: 16px;
+}
+.display-none { display: none; }
+
+/* INFO AND SUPPORTS */
+.cm-credits-container {
+	font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+	font-weight: 300;
+	color: #333;
+	width: 600px;
+}
+
+.cm-credits-container a { color: #1c4196; }
+
+.cm-credits-container h1 {
+	color: #1c4196;
+	font-weight: 300;
+	font-size: 1.5em;
+}
+
+.cm-credits-logo-container,
+.cm-credits-links-container {
+	clear: left;
+	float: left;
+}
+
+.cm-credits-logo-container {
+	width: 100%;
+	padding: 1em 20% 0 20%;
+	margin: 0;
+	background-color: #ffffff;
+}
+
+.cm-credits-links-container {
+	width: 100%;
+	padding: 5% 5% 0 5%;
+}
+
+.cm-credits-logo-container img {
+	width: 100%;
+	margin-top: 0.5em;
+}
+
+.cm-credits-release-version {
+	float: right;
+	font-size: 1.2em;
+	color: #1c4196;
+	position: relative;
+	bottom: 2em;
+	right: 0.5em;
+	padding: 0px;
+	margin: 10px 0px 0px 0px;
+}
+
+.cm-credits-links-left,
+.cm-credits-links-right {
+	float: left;
+	width: 47%;
+}
+
+.cm-credits-links-left { margin-right: 3%; }
+
+.cm-credits-links-right { margin-left: 3%; }
+
+.cm-credits-links-container ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+
+.cm-credits-links-container ul li {
+	line-height: 2em;
+	border-bottom: 1px solid #dddddd;
+}
+
+.cm-credit-last-link { border-bottom: none !important; }
+
+.cm-credits-producer {
+	float: left;
+	margin-top: 5% !important;
+	margin-bottom: 5% !important;
+	padding: 1em 2em 1em 2em;
+	background-color: #ffffff;
+
+	-webkit-box-shadow: 0px 0px 5px rgba(50, 50, 50, 0.15);
+	-moz-box-shadow: 0px 0px 5px rgba(50, 50, 50, 0.15);
+	box-shadow: 0px 0px 5px rgba(50, 50, 50, 0.15);
+
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+}
+
+/*
+ * Login
+ */
+	#login-wrapper {
+		text-align: center;
+		width: 100%;
+	}
+	#login-container {
+		margin: 100px auto;
+		text-align: left;
+		width: 300px;
+	}
+	#release-box {
+		color: #04408c;
+		font-weight: bold;
+		padding-top: 1em;
+		text-align: center;
+	}
+
+/*
+ * Header
+ */
+	#header {
+		color: #666666;
+		height: 45px;
+		margin: 0;
+		padding: 3px 0px 0px 3px;
+	}
+	#header .description {
+		float: right;
+		font-size: 10px;
+		height: 45px;
+		line-height: 1.3em;
+		margin: 0px;
+		padding: 8px 10px 0px 0px;
+		text-align: right;
+		width: 200px;
+	}
+	#header img {
+		float: left;
+		height: 35px;
+		margin-top: 2px;
+		margin-left: 2px;
+	}
+	#header #instance-name {
+		float: left;
+		padding: 0.8em 0 0 0
+	}
+
+#lang_bar {
+	float: right;
+	clear: both;
+}
+
+#lang_bar a {
+	float: right;
+	margin: 0px 5px;
+}
+
+#msg-ct {
+	left: 50%;
+	position: absolute;
+	top: 3px;
+	width: 350px;
+	margin-left: -174px;
+}
+
+#msg {
+	height: 45px;
+	background-image: url("../images/msg-bg.png");
+	color: #666666;
+	font-size: 11px;
+	cursor: pointer;
+}
+
+.msg-blue #msg { background-image: url("../images/msg-bg-blue.png"); }
+
+#msg-inner {
+	padding: 5px 10px 0;
+	line-height: 12px;
+	text-align: center;
+}
+
+#msg-inner strong { color: #222222; }
+
+#msg img {
+	width: 19px;
+	height: 19px;
+}
+
+#msg-inner-hidden { padding-top: 8px; }
+
+.msg-inner-hidden-tooltip p {
+	padding: 0;
+	margin: 0;
+}
+
+#msg-inner p {
+	padding: 0;
+	margin: 0.5em 0 0 0;
+}
+
+/*custom rulse*/
+.cmdbuild_unconfigured_modpanel {
+	text-align: center;
+	vertical-align: middle;
+}
+
+.cmdbuild_unconfigured_modpanel * {
+	color: #aaaaaa;
+	font-size: 1.8em;
+}
+
+.cmdisplayfield-expandbutton { margin: "0 20px 0 0"; }
+
+.cmdb-displayfield-disabled * { color: #666666 !important; }
+
+/* Buttons */
+	.clearButtonBGandBorder {
+		-moz-border-radius: 0 !important;
+		-webkit-border-radius: 0 !important;
+		-o-border-radius: 0 !important;
+		-ms-border-radius: 0 !important;
+		-khtml-border-radius: 0 !important;
+		border-radius: 0 !important;
+		padding: 0;
+		border-width: 0 !important;
+		border-style : none !important;
+		background-image: none !important;
+		background-color: #dfe9f6 !important
+	}
+
+	.cmdisplayfield-expandbutton {
+		background-repeat: no-repeat;
+		background-position: center center;
+		float: left;
+		margin-left: 10px;
+		height: 20px;
+		width: 20px;
+		cursor: pointer;
+	}
+
+	.show_detail_link {
+		cursor: pointer;
+		font-weight: bold;
+		padding-top: 0.5em;
+		padding-bottom: 0.5em;
+		text-decoration: underline;
+	}
+
+/*trigger fields*/
+	.trigger-edit { background-image: url("../images/form/trigger-edit.png") !important; }
+
+	.trigger-add { background-image: url("../images/form/trigger-add.png") !important; }
+
+/* Custom rule to fix collapsible tab panel tool */
+	.x-tab-panel-header .x-tool { display: none; }
+
+/*
+ * For Ext.ux.plugins.IconCombo
+ */
+	.ux-icon-combo-icon {
+		background-repeat: no-repeat;
+		background-position: 0 50%;
+		width: 18px;
+		height: 14px;
+	}
+
+/* X-BROWSER-WARNING: this is not being honored by Safari */
+	.ux-icon-combo-input {
+		padding-left: 25px !important;
+	}
+
+	.x-form-field-wrap .ux-icon-combo-icon {
+		top: 3px;
+		left: 5px;
+	}
+
+	.ux-icon-combo-item {
+		background-repeat: no-repeat !important;
+		background-position: 3px 50% !important;
+		padding-left: 24px !important;
+	}
+
+
+/* Map toolbar icons */
+	.mapToolbarPan { background-image: url("../images/icons/map/pan.png") !important; }
+
+	.mapToolbarDrawPoint { background-image: url("../images/icons/map/draw.png") !important; }
+
+	.mapToolbarZoomIn { background-image: url("../images/icons/map/zoomin.png") !important; }
+
+	.mapToolbarZoomOut { background-image: url("../images/icons/map/zoomout.png") !important; }
+
+	.mapToolbarModifyCard { background-image: url("../images/icons/map/modify.png") !important; }
+
+	.mapFeaturePoint { background-image: url("../images/icons/map/point.png") !important; }
+
+	.mapFeatureLine { background-image: url("../images/icons/map/line.png") !important; }
+
+	.mapFeaturePolygon { background-image: url("../images/icons/map/polygon.png") !important; }
+
+	.map_cloud_title {
+		font-size: 1.2em;
+		text-decoration: underline;
+		padding-bottom: 0.5em
+	}
+
+	.map_cloud_item { font-size: 0.8em; }
+
+	.map_cloud_item strong{ font-weight: bold; }
+
+	.map_cloud_item span{ padding-left: 0.4em; }
+
+/* OpenLayer override */
+	.olControlMousePosition {
+		font-size: 1em;
+		font-weight: bold;
+		padding: 0.3em;
+	}
+
+	.olControlScaleLine {
+		left: 0.3em !important;
+		bottom: 0.3em !important;
+	}
+/*******************************/
+
+.importcsv-empty-cell { background-color: #dddddd; }
+
+.importcsv-invalid-cell { color: #ff0000; }
+
+.x-notification .ext-mb-error { background-image: url("../images/icons/exclamation.png") !important; }
+
+.x-notification .ext-mb-info { background-image: url("../images/icons/information.png") !important; }
+
+.x-notification .ext-mb-warning { background-image: url("../images/icons/error.png") !important; }
+
+.x-notification .x-window-body {
+	margin: 0;
+	padding: 1em !important;
+	width: auto !important;
+}
+
+.x-notification.fixed .x-tool-close { display: block }
+
+/* fix the icon size rendering on Extjs 4.1*/
+	.x-window-header .x-message-box-info,
+	.x-window-header .x-message-box-warning,
+	.x-window-header .x-message-box-question,
+	.x-window-header .x-message-box-error { background-size: 16px 16px; }
+
+/*
+ * Toolbars
+ */
+	.cmdb-administration-body .x-toolbar-default { border-color: #d0d0d0 !important; } /* FIX: for darker toolbars border color with tab panels */
+	.cmdb-toolbar-item {
+		color: #333333 !important;
+		font-size: 11px !important;
+		padding: 0px 5px !important;
+	}
+	.x-form-item-label {
+		font-weight: bold !important;
+		color: #555555 !important;
+	}
+	.cmdb-error-msg {
+		font-weight: bold;
+		padding-bottom: 1em;
+	}
+
+/* fieldset */
+	.cmfieldset {
+		border: 1px solid #E1E1E1;
+		padding: 5px 5px 0 15px;
+		margin-bottom: 10px;
+	}
+
+	.cmfieldset-header {
+		font-weight: bold;
+		color: #555555;
+	}
+
+	.cmcenter { text-align: center; }
+
+	.empty_panel {
+		background: url("../images/emptyPageBg.png");
+		background-position: bottom right;
+		background-repeat: no-repeat;
+	}
+
+.cm-bold { font-weight: bold; }
+
+.cm-action-col-icon-spacer { margin: 0px 3px; }
+
+/* Attachemnt window */
+	.cm_attachement_metadata_container {
+		border-top-style: solid !important;
+		border-top-width: 1px !important;
+		border-top-color: #99bbe8 !important;
+		padding-top: 0.5em;
+		margin-top: 0.5em;
+	}
+
+/* CMDBuild.IconsCombo*/
+	.cm-icon-list-item,
+	.cm-icon-list li,
+	.cm-icon-list-item-label,
+	.cm-icon-list-item-img {
+		float: left;
+	}
+
+	.cm-icon-list-item,
+	.cm-icon-list li {
+		clear: left;
+		width: 100%
+	}
+
+	.cm-icon-list-item-label {
+		padding: 0.5em 0.5em 0.5em 0;
+		line-height: 1.5em;
+	}
+
+	.cm-icon-list-item-img { margin: 0.5em; }
+
+/* Other */
+	.cmdbuild-nodisplay { display: none !important; }
+
+.bim-canvas
+{
+	height: 100%;
+	width: 100%;
+}
+
+/* Overrides */
+	.x-panel-header { padding: 2px 2px 2px 4px !important; }
+	.x-btn-group { box-shadow: none !important; } /* Hide button group white border */
+
+/* FIX: Fieldset label CheckBox */
+	.x-form-cb-wrap { height: auto !important; }
+
+/* Grid icons */
+	.x-grid-cell-inner .x-item-disabled { cursor: default !important; }
+
+/* FIX: empty ending row in grids */
+	.x-grid-row-summary { display: none; }
+
+/* Generic field invalid class */
+	.cm-form-invalid-field { border-color: #cc3300 !important; }

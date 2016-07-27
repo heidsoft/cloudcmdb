@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:jaxrs="http://cxf.apache.org/jaxrs"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://cxf.apache.org/jaxrs http://cxf.apache.org/schemas/jaxrs.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+	<context:component-scan
+		base-package="org.cmdbuild.service.rest.v2.cxf.configuration" />
+
+	<import resource="classpath:META-INF/cxf/cxf.xml" />
+	<import resource="classpath:META-INF/cxf/cxf-extension-*.xml" />
+	<import resource="classpath:META-INF/cxf/cxf-servlet.xml" />
+
+	<bean id="jaxbProvider" class="org.apache.cxf.jaxrs.provider.JAXBElementProvider" />
+	<bean id="jsonProvider" class="org.codehaus.jackson.jaxrs.JacksonJaxbJsonProvider" />
+	<bean id="wadlProvider" class="org.apache.cxf.jaxrs.model.wadl.WadlGenerator">
+		<property name="linkJsonToXmlSchema" value="true" />
+	</bean>
+
+	<jaxrs:server id="rest_v2" address="/rest/v2">
+		<jaxrs:providers>
+			<ref bean="jaxbProvider" />
+			<ref bean="jsonProvider" />
+			<ref bean="wadlProvider" />
+			<ref bean="v2_tokenHandler" />
+			<ref bean="v2_localizationHandler" />
+			<ref bean="v2_headerResponseHandler" />
+		</jaxrs:providers>
+		<jaxrs:serviceBeans>
+			<ref bean="v2_attachmentsConfiguration" />
+			<ref bean="v2_cardAttachments" />
+			<ref bean="v2_cardEmails" />
+			<ref bean="v2_cards" />
+			<ref bean="v2_classes" />
+			<ref bean="v2_classAttributes" />
+			<ref bean="v2_classPrivileges" />
+			<ref bean="v2_cql" />
+			<ref bean="v2_domains" />
+			<ref bean="v2_domainAttributes" />
+			<ref bean="v2_domainTrees" />
+			<ref bean="v2_emailTemplates" />
+			<ref bean="v2_fileStores" />
+			<ref bean="v2_functions" />
+			<ref bean="v2_graphConfiguration" />
+			<ref bean="v2_icons" />
+			<ref bean="v2_impersonate" />
+			<ref bean="v2_lookupTypes" />
+			<ref bean="v2_lookupTypeValues" />
+			<ref bean="v2_menu" />
+			<ref bean="v2_processAttributes" />
+			<ref bean="v2_processes" />
+			<ref bean="v2_processesConfiguration" />
+			<ref bean="v2_processInstanceActivities" />
+			<ref bean="v2_processInstanceAttachments" />
+			<ref bean="v2_processInstanceEmails" />			
+			<ref bean="v2_processInstancePrivileges" />
+			<ref bean="v2_processInstances" />
+			<ref bean="v2_processStartActivities" />
+			<ref bean="v2_relations" />
+			<ref bean="v2_reports" />
+			<ref bean="v2_sessions" />
+		</jaxrs:serviceBeans>
+		<jaxrs:extensionMappings>
+			<entry key="xml" value="application/xml" />
+			<entry key="json" value="application/json" />
+		</jaxrs:extensionMappings>
+	</jaxrs:server>
+
+</beans>

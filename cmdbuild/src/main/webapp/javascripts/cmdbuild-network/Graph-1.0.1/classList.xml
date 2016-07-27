@@ -1,0 +1,19 @@
+<DATA>
+	<params>
+		<type>div</type>
+	</params>
+	<div id="classListContainer">
+		<onInit>
+			<command>navigate</command>
+			<container>classListContainer</container>
+			<form>classlistform</form>
+		</onInit>
+		<form id="classlistform">
+ 			<params>
+				<type>tabbed</type>
+			</params>
+ 			<form title="classes" id="classes" include="classes.xml" invisible="true" class="commandPanelWindow cmdbuildTabbedForm"/> 
+ 			<form title="superClasses" id="superClasses" include="superClasses.xml" invisible="true" class="commandPanelWindow cmdbuildTabbedForm"/>
+		</form>
+	</div>
+</DATA>	

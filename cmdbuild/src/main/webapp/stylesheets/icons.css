@@ -1,0 +1,78 @@
+.add { background-image: url("../images/icons/add.png") !important; }
+.add_filter { background-image: url("../images/icons/add_filter.png") !important; }
+.attach { background-image: url("../images/icons/attach.png") !important; }
+.clone { background-image: url("../images/icons/clone.png") !important; }
+.delete { background-image: url("../images/icons/cross.png") !important; } /* @deprecated */
+.down { background-image: url("../images/icons/down.gif") !important;}
+.down-hover { background-image: url("../images/icons/down-hover.gif") !important; }
+.download { background-image: url("../images/icons/page_white_put.png") !important; }
+.edit_form { background-image: url("../images/icons/application_form_edit.png") !important; }
+.foreignkey { background-image: url("../images/icons/database_table.png") !important; }
+.graph { background-image: url("../images/icons/graph.png") !important; }
+.map { background-image: url("../images/icons/map.png") !important; }
+.modify { background-image: url("../images/icons/modify.png") !important; }
+.note { background-image: url("../images/icons/note.png") !important; }
+.ok { background-image: url("../images/icons/tick.png") !important; }
+.order { background-image: url("../images/icons/order.png") !important; }
+.password { background-image: url("../images/icons/key.png") !important; }
+.preview { background-image: url("../images/icons/preview.png") !important; }
+.print { background-image: url("../images/icons/print.png") !important; }
+.remove { background-image: url("../images/icons/remove.png") !important; }
+.save { background-image: url("../images/icons/save.png") !important; }
+.search { background-image: url("../images/icons/search.gif") !important; }
+.start { background-image: url("../images/icons/start.png") !important; }
+.stop { background-image: url("../images/icons/stop.png") !important; }
+.table { background-image: url("../images/icons/table.png") !important; }
+.translate { background-image: url("../images/icons/translate.png") !important; }
+.up { background-image: url("../images/icons/up.gif") !important; }
+.up-hover { background-image: url("../images/icons/up-hover.gif") !important; }
+.userInterface { background-image: url("../images/icons/userInterface.png") !important; }
+
+.arrow_left, /* @deprecated */
+.arrowLeft{ background-image: url("../images/icons/arrow_left.png") !important; }
+.arrow_refresh, /* @deprecated */
+.arrowRefresh { background-image: url("../images/icons/arrow_refresh.png") !important; }
+.arrow_right, /* @deprecated */
+.arrowRight { background-image: url("../images/icons/arrow_right.png") !important; }
+.collapse { background-image: url("../images/icons/collapse.png") !important; }
+.expand,
+.cmdisplayfield-expandbutton { background-image: url("../images/icons/expand.png") !important; }
+
+/* Filter and Privileges */
+	.searchFilter { background-image: url("../images/icons/filter/search.png") !important; }
+	.searchFilterClear { background-image: url("../images/icons/filter/searchClear.png") !important; }
+
+	.privileges { background-image: url("../images/icons/privileges/update.png") !important; }
+	.privilegesClear { background-image: url("../images/icons/privileges/clear.png") !important; }
+
+/* Email */
+	.email-delete { background-image: url("../images/icons/email/email-delete.png") !important; }
+	.email-edit { background-image: url("../images/icons/email/email-edit.png") !important; }
+	.email-regenerate { background-image: url("../images/icons/email/email-regenerate.png") !important; }
+	.email-reply { background-image: url("../images/icons/email/email-reply.png") !important; }
+	.email-send { background-image: url("../images/icons/email/email-send.png") !important; }
+	.email-view { background-image: url("../images/icons/email/email-view.png") !important; }
+
+/* File formats */
+	.csv { background-image: url("../images/icons/fileFormats/csv.png") !important; }
+	.odt { background-image: url("../images/icons/fileFormats/odt.png") !important; }
+	.pdf { background-image: url("../images/icons/fileFormats/pdf.png") !important; }
+	.rtf { background-image: url("../images/icons/fileFormats/rtf.png") !important; }
+	.sql { background-image: url("../images/icons/fileFormats/sql.png") !important; }
+	.xml { background-image: url("../images/icons/fileFormats/xml.png") !important; }
+	.zip { background-image: url("../images/icons/fileFormats/zip.png") !important; }
+
+/* Import/Export */
+	.export { background-image: url("../images/icons/export.png") !important; }
+	.import { background-image: url("../images/icons/import.png") !important; }
+
+/* Navigation chronology */
+	.navigation-chronology { background-image: url("../images/icons/navigation/chronology.png") !important; }
+
+/* Task Manager */
+	.task-manager-cyclic-execution { background-image: url("../images/icons/taskManager/cyclicExecution.png") !important; }
+	.task-manager-single-execution { background-image: url("../images/icons/taskManager/singleExecution.png") !important; }
+
+/* Trigger fields */
+	.trigger-add { background-image: url("../images/form/trigger-add.png") !important; }
+	.trigger-edit { background-image: url("../images/form/trigger-edit.png") !important; }

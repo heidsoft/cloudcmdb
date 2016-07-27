@@ -1,0 +1,9 @@
+[ITALIANO]
+Librerie aggiuntive per Tomcat 5.5
+* Copiare tomcat-dbcp.jar nella cartella common/lib di Tomcat 5.5 
+* Copiare il driver JDBC di PostgreSQL nella cartella common/lib di Tomcat 5.5 
+
+[ENGLISH]
+Tomcat 5.5 additional libraries
+* Copy tomcat-dbcp.jar in the Tomcat 5.5 common/lib directory
+* Copy PostgreSQL's JDBC driver within Tomcat 5.5 common/lib directory

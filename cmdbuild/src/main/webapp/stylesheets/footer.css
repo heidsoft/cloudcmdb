@@ -1,0 +1,29 @@
+#footer {
+	bottom: 0;
+	color: #727262;
+	font: 10px/16px Verdana, Arial, Helvetica, sans-serif;
+	height: 16px;
+	padding: 0px 5px;
+	position: absolute;
+	width: 100%;
+}
+#footer a {
+	color: #727262;
+	text-decoration: none;
+}
+#footer .left {
+	float: left;
+	text-align: left;
+ 	width: 25%;
+}
+#footer .center {
+	float: left;
+	text-align: center;
+ 	width: 50%;
+}
+#footer .right {
+	float: right;
+	text-align: right;
+ 	width: 25%;
+}
+#cmdbuild-credits-link { cursor: pointer; }

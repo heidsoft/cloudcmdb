@@ -1,0 +1,57 @@
+<DATA>
+	<params>
+		<type>popup</type>
+		<title>Attributes</title>
+	</params>
+	<div id="mainAttributesFormContainerGrid">
+	<onInit>
+		<command>showFilterByAttributes</command>
+		<classId>$filterByClassFormGrid.classId</classId>
+		<navigationForm>formmaincardgridattributes</navigationForm>
+		<navigationContainer>mainAttributesFormContainerGrid</navigationContainer>
+	</onInit>
+		<form id="formmaincardgridattributes" class="cmdbuildCard">
+			<params>
+				<type>div</type>
+			</params>
+			<select label="Add attribute" i18nLabel="LABEL_FILTERATTRIBUTE" id="attributes4Class" class="optionsSelect">
+				<params>
+					<backend>FilterAttributes</backend>
+					<classId>$filterByClassFormGrid.classId</classId>
+				</params>
+				<onChange>
+					<command>addFilterAttribute</command>
+					<value>attributes4Class</value>
+					<navigationForm>filterByAttributesForm</navigationForm>
+					<navigationContainer>filterByAttributesContainer
+					</navigationContainer>
+					<classId>$filterByClassFormGrid.classId</classId>
+				</onChange>
+			</select>
+		</form>
+	</div> 
+	<h1 id="cmdbuildClassDescription" class="pageTitle">PAGE TITLE</h1>
+	<div id="filterByAttributesContainer">
+		<form id="filterByAttributesForm" class="cmdbuildCard">
+  			<params>
+				<type>formAttributesFilter</type>
+				<backend>FilterAttributesNavigation</backend>
+				<classId>$filterByClassFormGrid.classId</classId>
+				<navigationForm>filterByAttributesForm</navigationForm>
+				<navigationContainer>filterByAttributesContainer</navigationContainer>
+				<idSuffix>filter</idSuffix>
+			</params>
+		</form>
+	</div>
+<div class='cmdbuildFooterButtonsWrapper'>
+		<button i18nText="BUTTON_OK" text="Ok" id="okAttributesDialogButton">
+			<onClick>
+				<command>closeFilterAttributesDialog</command>
+				<dialog>attributesPanelDialog</dialog>
+				<navigationContainer>filterByClassFormContainerGrid</navigationContainer>
+				<navigationForm>filterByClassFormGrid</navigationForm>
+				<stayOnRow>true</stayOnRow>
+			</onClick>
+		</button>
+	</div>
+</DATA>

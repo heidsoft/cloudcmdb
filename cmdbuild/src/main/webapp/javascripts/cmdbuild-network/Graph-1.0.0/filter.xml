@@ -1,0 +1,32 @@
+<DATA>
+	<params>
+		<type>popup</type>
+		<title>Filters</title>
+		<i18nTitle>TITLEPOPUP_FILTERS</i18nTitle>
+		<height>500</height>
+	</params>
+	<div id="filterDiv">
+		<onInit>
+			<command>navigate</command>
+			<container>filterDiv</container>
+			<form>filtersPanelMain</form>
+		</onInit>
+		<form id="filtersPanelMain">
+ 			<params>
+				<type>tabbed</type>
+			</params>
+			<form i18nTitle="TAB_CLASSES" title="Classes" id="filterClasses" include="filterByClass.xml" class="commandPanelWindow cmdbuildTabbedForm"/>
+			<form i18nTitle="TAB_DOMAINS" title="Domains" id="filterDomains" include="filterByDomain.xml" class="commandPanelWindow cmdbuildTabbedForm"/>
+		</form>
+	</div>
+	<div class='cmdbuildFooterButtonsWrapper'>
+		<button i18nText="BUTTON_OK" text="Ok" id="okOptionsDialogButton">
+			<onClick>
+				<command>applyFilters</command>
+				<dialog>commandPanelDialog</dialog>
+				<filterByClass>filterByClassForm</filterByClass>
+				<filterByDomain>filterByDomainForm</filterByDomain>
+			</onClick>
+		</button>
+	</div>
+</DATA>

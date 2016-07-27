@@ -1,0 +1,69 @@
+<DATA>
+	<params>
+		<type>popup</type>
+		<title>Synchronization</title>
+	</params>
+	<p text="" withReturn="true"/>
+	<h2 text="Sincronizzo?"/>
+	<p text="La mail etc.." withReturn="true"/>
+ 	<div id="cmdbuildSynctemplates">
+		<onInit>
+			<command>navigate</command>
+			<container>cmdbuildSynctemplates</container>
+			<form>formsynctemplates</form>
+		</onInit>
+		<form id="formsynctemplates" class="cmdbuildCard">
+			<params>
+				<type>grid</type>
+				<backend>MailList</backend>
+				<nRows>5</nRows>
+				<sort>Date</sort>
+				<direction>desc</direction>
+				<navigation>false</navigation>
+				<scroll>true</scroll>
+				<scrollHeight>220</scrollHeight>
+				<processType>$parameters.processType</processType>
+				<processInstanceId>$parameters.processCard</processInstanceId>
+				<formData>$parameters.formData</formData>
+				<selection>true</selection>
+				<selectionDefault>true</selectionDefault>
+				<onlyTemplates>true</onlyTemplates>
+			</params>
+			<onClick>
+				<command>navigate</command>
+				<form>visualizesyncmail</form>
+				<container>cmdbuildVisualizeSyncMail</container>
+			</onClick>
+		</form>
+	</div>
+	<div id="cmdbuildVisualizeSyncMail">
+		<form id="visualizesyncmail" class="cmdbuildCard">
+			<params>
+				<type>form</type>
+				<backend>Mail</backend>
+				<cardId variableId="true">$formsynctemplates._id</cardId>
+				<readonly>true</readonly>
+				<formData>$parameters.formData</formData>
+			</params>
+		</form>
+	</div>
+	<div class='cmdbuildFooterButtonsWrapper'>
+		<button text="Sincronizza le mail selezionate" id="okSyncMailDialogButton">
+			<onClick>
+				<command>synchronizeMails</command> <!--  questo e' il comando che ho a disposizione -->
+				<widgetName>$parameters.widgetName</widgetName>
+				<form>formsynctemplates</form>
+				<dialog>syncMailDialog</dialog>
+				<formData>$parameters.formData</formData>
+			</onClick>
+		</button>
+		<button text="Non sincronizzare" id="cancelSyncMailDialogDialogButton">
+			<onClick>
+				<command>noSynchronizeMails</command>
+				<widgetName>$parameters.widgetName</widgetName>
+				<form>formsynctemplates</form>
+				<dialog>syncMailDialog</dialog>
+			</onClick>
+		</button>
+	</div>
+</DATA>

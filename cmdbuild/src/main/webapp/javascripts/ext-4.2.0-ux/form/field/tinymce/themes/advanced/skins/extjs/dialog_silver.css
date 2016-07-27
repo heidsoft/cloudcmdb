@@ -1,0 +1,9 @@
+@import './dialog.css';
+
+body { scrollbar-3dlight-color: #eeeeee; scrollbar-base-color: #eeeeee; scrollbar-highlight-color: #eeeeee; scrollbar-shadow-color: #eeeeee; background: #eeeeee; }
+html { background: #eeeeee; }
+a:hover { color: #333333; }
+legend { color: #333333; }
+#charmap a:hover { color: #333333; }
+h1,h2,h3,h4 { color: #333333; }
+.title { color: #333333; }

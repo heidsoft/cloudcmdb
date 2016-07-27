@@ -1,0 +1,76 @@
+.cmdb-tree-no-icon { background-image: url("../images/icons/tree/transparentPixel.png") !important; }
+
+/* Defaults overrides */
+	.x-tree-icon-parent { background-image: url("../images/icons/tree/folderCollapsed.png") !important; }
+	.x-grid-tree-node-expanded .x-tree-icon-parent { background-image: url("../images/icons/tree/folderExpanded.png") !important; }
+
+/* BIM */
+	.cmdb-tree-bim-icon { background-image: url("../images/icons/tree/bim.png") !important; }
+
+/* Class */
+	.cmdb-tree-superclass-icon { background-image: url("../images/icons/tree/superClassCollapsed.png") !important; }
+	.x-grid-tree-node-expanded .cmdb-tree-superclass-icon { background-image: url("../images/icons/tree/superClassExpanded.png") !important; }
+
+	.cmdb-tree-class-icon { background-image: url("../images/icons/tree/class.png") !important; }
+
+/* Configuration */
+	.cmdb-tree-configuration-icon { background-image: url("../images/icons/tree/configuration.png") !important; }
+
+/* Custom page */
+	.cmdb-tree-custompage-icon { background-image: url("../images/icons/tree/customPage.png") !important; }
+
+/* Dashboard */
+	.cmdb-tree-dashboard-icon { background-image: url("../images/icons/tree/dashboard.png") !important; }
+
+/* Domain */
+	.cmdb-tree-domain-icon { background-image: url("../images/icons/tree/domain.png") !important; }
+
+/* Email */
+	.cmdb-tree-email-icon { background-image: url("../images/icons/tree/email.png") !important; }
+
+/* GIS */
+	.cmdb-tree-gis-icon { background-image: url("../images/icons/tree/gis.png") !important; }
+
+/* Localization */
+	.cmdb-tree-localization-icon { background-image: url("../images/icons/tree/localization.png") !important; }
+
+/* Lookup */
+	.cmdb-tree-superLookup-icon { background-image: url("../images/icons/tree/superLookupCollapsed.png") !important; }
+	.x-grid-tree-node-expanded .cmdb-tree-superLookup-icon { background-image: url("../images/icons/tree/superLookupExpanded.png") !important; }
+
+	.cmdb-tree-lookup-icon { background-image: url("../images/icons/tree/lookup.png") !important; }
+
+/* Navigation tree */
+	.cmdb-tree-navigationTree-icon { background-image: url("../images/icons/tree/navigationTree.png") !important; }
+
+/* Report */
+	.cmdb-tree-report-icon { background-image: url("../images/icons/tree/report.png") !important; }
+	.cmdb-tree-reportpdf-icon { background-image: url("../images/icons/fileFormats/pdf.png") !important; }
+	.cmdb-tree-reportcsv-icon { background-image: url("../images/icons/fileFormats/csv.png") !important; }
+	.cmdb-tree-reportodt-icon { background-image: url("../images/icons/fileFormats/odt.png") !important; }
+	.cmdb-tree-reportxml-icon { background-image: url("../images/icons/fileFormats/xml.png") !important; }
+
+/* Search filter */
+	.cmdb-tree-searchFilter-icon { background-image: url("../images/icons/tree/searchFilter.png") !important; }
+
+/* Task */
+	.cmdb-tree-taskGroup-icon { background-image: url("../images/icons/tree/taskGroupCollapsed.png") !important; }
+	.x-grid-tree-node-expanded .cmdb-tree-taskGroup-icon { background-image: url("../images/icons/tree/taskGroupExpanded.png") !important; }
+
+	.cmdb-tree-tasks-icon { background-image: url("../images/icons/tree/task.png") !important; }
+
+/* User and Group*/
+	.cmdb-tree-userGroup-icon { background-image: url("../images/icons/tree/userGroupCollapsed.png") !important; }
+	.x-grid-tree-node-expanded .cmdb-tree-userGroup-icon { background-image: url("../images/icons/tree/userGroupExpanded.png") !important; }
+
+	.cmdb-tree-group-icon { background-image: url("../images/icons/tree/group.png") !important; }
+	.cmdb-tree-user-icon { background-image: url("../images/icons/tree/user.png") !important; }
+
+/* Utility */
+	.cmdb-tree-utility-icon { background-image: url("../images/icons/tree/utility.png") !important; }
+
+/* Workflow */
+	.cmdb-tree-superprocessclass-icon { background-image: url("../images/icons/tree/superWorkflowCollapsed.png") !important; }
+	.x-grid-tree-node-expanded .cmdb-tree-superprocessclass-icon { background-image: url("../images/icons/tree/superWorkflowExpanded.png") !important; }
+
+	.cmdb-tree-processclass-icon { background-image: url("../images/icons/tree/workflow.png") !important; }

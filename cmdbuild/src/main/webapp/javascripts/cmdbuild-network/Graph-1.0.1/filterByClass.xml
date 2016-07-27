@@ -1,0 +1,71 @@
+<DATA>
+	<params>
+		<type>div</type>
+	</params>
+	<onClick>
+		<command>navigate</command>
+		<container>filterByClassFormContainerGrid</container>
+		<form>filterByClassFormGrid</form>
+		<stayOnRow>true</stayOnRow>
+	</onClick>
+	<div id="filterByClassFormContainerButtons">
+		<onInit>
+			<command>navigate</command>
+			<container>filterByClassFormContainerButtons</container>
+			<form>filterByClassFormButtons</form>
+		</onInit>
+		<form id="filterByClassFormButtons">
+			<params>
+				<type>div</type>
+			</params>
+			<button text="Superclasses">
+				<params>
+					<condition>$cmdbuildvariables.filterClassOnlyClasses</condition>
+				</params>
+				<onClick>
+					<command>showSuperClasses</command>
+					<containerButtons>filterByClassFormContainerButtons</containerButtons>
+					<formButtons>filterByClassFormButtons</formButtons>
+					<container>filterByClassFormContainerGrid</container>
+					<form>filterByClassFormGrid</form>
+				</onClick>
+			</button>
+			<button text="Only classes">
+				<params>
+					<condition>$cmdbuildvariables.filterClassSuperclasses</condition>
+				</params>
+				<onClick>
+					<command>showOnlyClasses</command>
+					<containerButtons>filterByClassFormContainerButtons</containerButtons>
+					<formButtons>filterByClassFormButtons</formButtons>
+					<container>filterByClassFormContainerGrid</container>
+					<form>filterByClassFormGrid</form>
+				</onClick>
+			</button>
+		</form>
+	</div>
+	<div id="filterByClassFormContainerGrid">
+		<onInit>
+			<command>navigate</command>
+			<container>filterByClassFormContainerGrid</container>
+			<form>filterByClassFormGrid</form>
+		</onInit>
+		<form id="filterByClassFormGrid">
+	 		<params>
+				<type>classesGrid</type>
+				<backend>ClassesFilter</backend>
+				<nRows>10</nRows>
+				<selection>true</selection>
+			</params>
+			<rowButton i18nTooltip="TOOLTIP_ATTRIBUTES" class="grid-btn btn-find" tooltip="Zoom on Card">
+				<onClick>
+					<command>navigateOnAttributes</command>
+					<form>filterOnAttributes</form>
+					<dialog>attributesPanelDialog</dialog>
+				</onClick>
+			</rowButton>
+		</form>
+	</div>
+	<form title="Filter" id="filterOnAttributes" include="filterByClassAttributes.xml" class="commandPanelWindow cmdbuildTabbedForm"/> 
+	<dialog id="attributesPanelDialog"></dialog>
+</DATA>

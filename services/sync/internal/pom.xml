@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>org.cmdbuild</groupId>
+		<artifactId>cmdbuild-parent</artifactId>
+		<version>2.4.1</version>
+		<relativePath>../../../parent</relativePath>
+	</parent>
+	<artifactId>cmdbuild-services-sync-internal</artifactId>
+	<dependencies>
+		<dependency>
+			<groupId>org.cmdbuild</groupId>
+			<artifactId>cmdbuild-commons</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.cmdbuild</groupId>
+			<artifactId>cmdbuild-services-sync-core</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.cmdbuild</groupId>
+			<artifactId>cmdbuild-dao-core</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+		<dependency>
+			<!-- needed due to some implementantion definciencies, should be removed
+				ASAP -->
+			<groupId>org.cmdbuild</groupId>
+			<artifactId>cmdbuild-dao-postgresql</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+	</dependencies>
+</project>

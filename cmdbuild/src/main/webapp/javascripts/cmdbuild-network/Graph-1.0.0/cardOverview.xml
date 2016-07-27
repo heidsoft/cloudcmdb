@@ -1,0 +1,67 @@
+<DATA>
+	<params>
+		<type>div</type>
+	</params>
+	<div class="bodyToolbar">
+		<div class="toolbarButton border-box">
+			<span class="btn-moredetails" i18nTooltip="TOOLTIP_SHOWMOREDETAILS" tooltip="Show more details">
+				<onClick>
+					<command>tab</command>
+					<form>detailform</form>
+					<activeTab>1</activeTab>
+				</onClick>
+			</span>
+		</div>
+	</div>
+	<h1 id="cmdbuildCardOverviewTitle" class="pageTitle">PAGE TITLE</h1>
+	<div class="cmdbuildClear"></div>
+ 	<div id="cmdbuildCardOverview">
+		<onInit>
+			<command>navigate</command>
+			<container>cmdbuildCardOverview</container>
+			<form>formcardoverview</form>
+			<fromObserving>true</fromObserving>
+		</onInit>
+		<form id="formcardoverview" class="cmdbuildCard">
+ 			<observe container="cmdbuildCardOverview">
+				<dummy1>$selectedForm.dummy</dummy1> 
+			</observe>
+ 			<params>
+				<type>form</type>
+				<backend>GraphCard</backend>
+				<classId>$selectedForm.classId</classId>
+				<cardId>$selectedForm.id</cardId>
+				<readonly>true</readonly>
+				<displayableInList>true</displayableInList>
+				<noGroup>true</noGroup>
+				<onInitComplete>cmdbUpdateCardOverviewTitle</onInitComplete>
+			</params>
+		</form>
+	</div>
+	<div id="cmdbuildCardOverviewRelations">
+		<onInit>
+			<command>navigate</command>
+			<container>cmdbuildCardOverviewRelations</container>
+			<form>formcardoverviewrelations</form>
+			<fromObserving>true</fromObserving>
+		</onInit>
+		<form id="formcardoverviewrelations" class="cmdbuildCard">
+ 			<observe container="cmdbuildCardOverviewRelations">
+				<dummy1>$selectedForm.dummy</dummy1> 
+			</observe>
+ 			<params>
+				<type>relationsGrid</type>
+				<backend>OnGraphRelations</backend>
+				<nRows>5</nRows>
+				<classId>$selectedForm.classId</classId>
+				<cardId>$selectedForm.id</cardId>
+			</params>
+			<rowButton id="zoom" class="grid-btn btn-attributes" tooltip="">
+				<onClick>
+					<command>showRelatioAttributes</command>
+					<form>formcardoverviewrelations</form>
+				</onClick>
+			</rowButton>
+		</form>
+	</div>
+</DATA>

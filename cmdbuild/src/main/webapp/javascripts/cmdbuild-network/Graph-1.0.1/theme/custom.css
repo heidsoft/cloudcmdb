@@ -1,0 +1,781 @@
+/**
+ * MAIN STYLE
+ */
+body.CMDBuildRelationsGraphBody {
+	margin: 0;
+}
+a {
+	outline: 0;
+}
+/**
+ * CONTENT STRUCTURE
+ */
+.mainContainer {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+}
+.mainContainerHeader {
+	position:absolute;
+	width: 100%;
+	top: 0;
+	z-index: 50;
+}
+.mainContainerBody {
+	overflow: auto;
+}
+.mainContainerFooter {
+	position:absolute;
+	width: 100%;
+	bottom: 0;
+	z-index: 50;
+}
+
+/*
+ * TOOLBAR BUTTONS
+ */
+.toolbarSeparator {
+	display: inline-block;
+	border-left: 1px solid #98c8ff;
+	border-right: 1px solid #FFF;
+	height: 16px;
+	margin: 3px 1px;
+}
+.toolbarButton {
+	cursor: pointer;
+	width: 22px;
+	height: 22px;
+	display: inline-block;
+	border:1px solid transparent;
+	padding: 2px 2px 2px 2px;
+	margin: 0 1px;
+}
+.toolbarButton:hover {
+	border: 1px solid #81a4d0;
+	background-image: none;
+	background-color: #dbeeff;
+	background-image: -webkit-gradient(linear, 50% 0, 50% 100%, color-stop(0%, #dbeeff),
+		color-stop(48%, #d0e7ff), color-stop(52%, #bbd2f0),
+		color-stop(100%, #bed6f5));
+	background-image: -webkit-linear-gradient(top, #dbeeff, #d0e7ff 48%, #bbd2f0 52%, #bed6f5);
+	background-image: -moz-linear-gradient(top, #dbeeff, #d0e7ff 48%, #bbd2f0 52%, #bed6f5);
+	background-image: -o-linear-gradient(top, #dbeeff, #d0e7ff 48%, #bbd2f0 52%, #bed6f5);
+	background-image: linear-gradient(top, #dbeeff, #d0e7ff 48%, #bbd2f0 52%, #bed6f5);
+}
+.toolbarButton:active,
+.toolbarButton.btn-active {
+	border-color: #7a9ac4;
+	background-image: none;
+	background-color: #bccfe5;
+	background-image: -webkit-gradient(linear, 50% 0, 50% 100%, color-stop(0%, #bccfe5),
+		color-stop(48%, #c5d6e7), color-stop(52%, #95c4f4),
+		color-stop(100%, #9fc9f5));
+	background-image: -webkit-linear-gradient(top, #bccfe5, #c5d6e7 48%, #95c4f4 52%, #9fc9f5);
+	background-image: -moz-linear-gradient(top, #bccfe5, #c5d6e7 48%, #95c4f4 52%, #9fc9f5);
+	background-image: -o-linear-gradient(top, #bccfe5, #c5d6e7 48%, #95c4f4 52%, #9fc9f5);
+	background-image: linear-gradient(top, #bccfe5, #c5d6e7 48%, #95c4f4 52%, #9fc9f5);
+}
+.toolbarButton.btn-disabled {
+	opacity: .5;
+	cursor: default;
+}
+.toolbarButton.btn-disabled:hover,
+.toolbarButton.btn-disabled:active {
+	border-color: transparent!important;
+	background: none!important;
+}
+.toolbarButton span {
+	display: block;
+	width: 16px;
+	height: 16px;
+}
+.undo {
+	background:transparent url("images/icons/icon_undo.png") right 50% no-repeat;
+}
+.layout {
+	background:transparent url("images/icons/icon_refresh_layout.png") right 50% no-repeat;
+}
+.stop {
+	background:transparent url("images/icons/icon_stop_operations.png") right 50% no-repeat;
+}
+.centerOnViewer {
+	background:transparent url("images/icons/icon_center_image.png") right 50% no-repeat;
+}
+.centerOnSelection {
+	background:transparent url("images/icons/icon_center_on_selection.png") right 50% no-repeat;
+}
+.emptyFilter {
+	background:transparent url("images/icons/icon_folder_empty.png") right 50% no-repeat;
+}
+.selectAll {
+	background:transparent url("images/icons/icon_select_all.png") right 50% no-repeat;
+}
+.deleteSelected {
+	background:transparent url("images/icons/icon_delete_selected.png") right 50% no-repeat;
+}
+.deleteUnselected {
+	background:transparent url("images/icons/icon_delete_unselected.png") right 50% no-repeat;
+}
+.openSelected {
+	background:transparent url("images/icons/icon_open_selected.png") right 50% no-repeat;
+}
+.navigateOnNode {
+	background:transparent url("images/icons/icon_open_from_this_node.png") right 50% no-repeat;
+}
+.subGraph {
+	background:transparent url("images/icons/icon_select_subgraph.png") right 50% no-repeat;
+}
+.properties {
+	background:transparent url("images/icons/icon_properties.png") right 50% no-repeat;
+}
+.filter {
+	background:transparent url("images/icons/icon_filter.png") right 50% no-repeat;
+}
+.print {
+	background:transparent url("images/icons/icon_print.png") right 50% no-repeat;
+}
+.nofilter {
+	background:transparent url("images/icons/icon_nofilter.png") right 50% no-repeat;
+}
+.btn-lessdetails {
+	background:transparent url("images/icons/icon_show_less.png") right 50% no-repeat;
+}
+.btn-moredetails {
+	background:transparent url("images/icons/icon_show_more.png") right 50% no-repeat;
+}
+.btn-selecteditems {
+	background:transparent url("images/icons/icon_show_less.png") right 50% no-repeat;
+}
+.btn-allitems {
+	background:transparent url("images/icons/icon_show_more.png") right 50% no-repeat;
+}
+.btn-onlyclasses {
+	background:transparent url("images/icons/icon_show_less.png") right 50% no-repeat;
+}
+.btn-alsosuperclasses {
+	background:transparent url("images/icons/icon_show_more.png") right 50% no-repeat;
+}
+.btn-attributes {
+	background:transparent url("images/icons/icon_attributes.png") right 50% no-repeat;
+}
+.btn-find {
+	background:transparent url("images/icons/icon_find.png") right 50% no-repeat;
+}
+.btn-navigationtree {
+	background:transparent url("images/icons/icon_navigation_tree.png") right 50% no-repeat;
+}
+.btn-toggletooltips {
+	background:transparent url("images/icons/icon_tooltip.png") right 50% no-repeat;
+}
+.btn-togglefilter {
+	background:transparent url("images/icons/icon_nofilter.png") right 50% no-repeat;
+}
+.btn-toggleblocklayout {
+	background:transparent url("images/icons/icon_stop_layout.png") right 50% no-repeat;
+}
+/**
+ * HEADER TOOLBAR
+ */
+.headerToolbar:after {
+	content: " ";
+	clear: both;
+	display: block;
+}
+.headerToolbar .leftToolbarButtons {
+	float: left;
+}
+.headerToolbar .leftToolbarButtons:after {
+	content: " ";
+	clear: both;
+	display: block;
+}
+.headerToolbar .rightToolbarButtons {
+	float: right;
+}
+.headerToolbar .rightToolbarButtons:after {
+	content: " ";
+	clear: both;
+	display: block;
+}
+/* navigationTreesBtnMenu_menu */
+#navigationTreesBtnMenu_menu {
+	position: absolute;
+	width: 150px;
+}
+#navigationTreesBtnMenu_menu > ul.ui-menu {
+	background: #f0f0f0;
+	padding: 2px;
+	border-color: #99bce8;
+	border-width: 1px;
+	border-style: solid;
+}
+#navigationTreesBtnMenu_menu li {
+	border: 1px solid transparent;
+	z-index: 10;
+}
+#navigationTreesBtnMenu_menu li:hover {
+	background-image: none;
+	background-color: #d9e8fb;
+	background-image: -webkit-gradient(linear, 50% 0, 50% 100%, color-stop(0%, #e7f0fc),
+		color-stop(100%, #c7ddf9));
+	background-image: -webkit-linear-gradient(top, #e7f0fc, #c7ddf9);
+	background-image: -moz-linear-gradient(top, #e7f0fc, #c7ddf9);
+	background-image: -o-linear-gradient(top, #e7f0fc, #c7ddf9);
+	background-image: linear-gradient(top, #e7f0fc, #c7ddf9);
+	border-color: #a9cbf5;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	-ms-border-radius: 3px;
+	-o-border-radius: 3px;
+	border-width: 1px;
+	border-style: solid;
+	padding: 0;
+	z-index: 10;
+}
+#navigationTreesBtnMenu_menu span {
+	line-height: 18px;
+	padding: 0 0 0 30px;
+	display: inline-block;
+	width: auto;
+	height: auto;
+	font-weight: normal;
+}
+#navigationTreesBtnMenu_menu li.active span {
+	background:transparent url("images/icons/icon_selected.png") 2px 50% no-repeat;
+}
+#navigationTreesBtnMenu_menu .menu-icon-separator {
+	left: 24px;
+	border-left: solid 1px #e0e0e0;
+	background-color: white;
+	width: 2px;
+	position: absolute;
+	top: 0;
+	z-index: 0;
+	margin-top: 2px;
+	height: calc(100% - 4px);
+	overflow: hidden;
+}
+/**
+ * FOOTER TOOLBAR
+ */
+.mainContainerFooter .toolbarSeparator {
+	height: 30px;
+}
+.mainContainerFooter .toolbarButton {
+	margin: 0 1px 1px 0;
+}
+.footerToolbarItem {
+	display: inline-block;
+	vertical-align: bottom;
+	margin: 0 1px;
+}
+.footerToolbarItem .cmdbuildGuiFormRow {
+	margin: 2px 0;
+	width: auto;
+}
+.footerToolbarItem .cmdbuildGuiFormRow dt {
+	width: auto;
+	float: none;
+	padding: 0;
+	line-height: 1em;
+	text-align: left;
+}
+.footerToolbarItem .cmdbuildGuiFormRow dd {
+	margin: 0;
+}
+.optionsSpinner {
+	width: 20px!important;
+	text-align: left;
+}
+.footerToolbarItem.buttonset label.cmdbuildLabel {
+	display: block;
+	margin-bottom: 1px;
+	line-height: 1.2em;
+}
+.footerToolbarItem .ui-buttonset {
+	margin-bottom: 2px;
+}
+.footerToolbarItem .ui-button-text-only .ui-button-text {
+	padding: .2em .5em;
+}
+.openLevelsSliderContainer {
+	padding: 7px 7px;
+}
+#openLevelsSlider {
+	width: 85px;
+}
+#openLevelsSlider span {
+	outline: none;
+}
+/**
+ * BODY TOOLBAR
+ */
+.bodyToolbar {
+	text-align: right;
+	margin-bottom: 5px;
+	float: right;
+}
+
+/**
+ * STATUS PANEL
+ */
+#statusPanelContainer {
+	border-top: 1px solid #99bce8;
+	border-left: 1px solid #99bce8;
+	border-right: 1px solid #99bce8;
+	padding: 2px 3px;
+}
+.counterType {
+	font-size: 11px;
+}
+.counterValue {
+	font-size: 11px;
+	color: #448844;
+	font-weight:bold;
+	margin-right: .5em;
+}
+
+/**
+ * PAGE TITLE
+ */
+.pageTitle {
+	color: #15498b;
+	margin-top: 0;
+	font-size: 1.5em;
+	margin-bottom: .5em;
+}
+
+/**
+ * TABS
+ */
+.ui-tabs.ui-widget.ui-widget-content {
+	border: 0;
+	padding: 0;
+}
+.cmdbuild-graph .ui-tabs .ui-tabs-nav .ui-tabs-anchor {
+	padding: 0.2em 0.5em;
+}
+.cmdbuild-graph .ui-tabs-nav .ui-state-default {
+	border-bottom: 0;
+}
+.cmdbuild-graph .ui-tabs-panel.ui-widget-content {
+	border-top: 0;
+	padding: 0.9em 1em;
+}
+.cmdbuild-graph .ui-tabs .ui-tabs-nav .ui-corner-all, 
+.cmdbuild-graph .ui-tabs .ui-tabs-nav .ui-corner-top, 
+.cmdbuild-graph .ui-tabs .ui-tabs-nav .ui-corner-right, 
+.cmdbuild-graph .ui-tabs .ui-tabs-nav .ui-corner-tr {
+	border-top-right-radius: 4px;
+}
+.cmdbuild-graph .ui-tabs .ui-tabs-nav .ui-corner-all, 
+.cmdbuild-graph .ui-tabs .ui-tabs-nav .ui-corner-top, 
+.cmdbuild-graph .ui-tabs .ui-tabs-nav .ui-corner-left, 
+.cmdbuild-graph .ui-tabs .ui-tabs-nav .ui-corner-tl {
+	border-top-left-radius: 4px;
+}
+
+/**
+ * GRID
+ */
+.cmdbuild-graph .cmdbuildMainColumnWrapper .dataTables_wrapper .dataTables_scroll {
+	max-height: inherit;
+}
+.cmdbuild-graph .ui-widget-header.fg-toolbar.ui-toolbar.ui-widget-header {
+	display: none;
+}
+.cmdbuild-graph .dataTables_scroll {
+	border: 1px solid #99bce8;
+}
+.cmdbuild-graph .dataTables_scrollHeadInner {
+	border-right: 1px solid #99bce8;
+}
+.cmdbuild-graph .dataTables_scrollHead th.ui-state-default .ui-icon {
+	background-image: url("images/ui-icons_222222_256x240.png");
+}
+.cmdbuild-graph .dataTables_scrollHead th.ui-state-default {
+	color: black;
+	font-weight: normal;
+	overflow: hidden;
+	border: 0 none;
+	border-right: 1px solid #c5c5c5;
+	text-shadow: 0 1px 0 rgba(255, 255, 255, 0.3);
+	background-image: none;
+	background-color: #c5c5c5;
+	background-image: -webkit-gradient(linear, 50% 0, 50% 100%, color-stop(0%, #f9f9f9),
+		color-stop(100%, #e3e4e6));
+	background-image: -webkit-linear-gradient(top, #f9f9f9, #e3e4e6);
+	background-image: -moz-linear-gradient(top, #f9f9f9, #e3e4e6);
+	background-image: -o-linear-gradient(top, #f9f9f9, #e3e4e6);
+	background-image: linear-gradient(top, #f9f9f9, #e3e4e6);
+}
+.cmdbuild-graph table.dataTable tbody tr.selected {
+	background-color: #dfe8f6!important;
+}
+.cmdbuild-graph table.dataTable.display tbody tr.even.selected > .sorting_1,
+.cmdbuild-graph table.dataTable.display tbody tr.odd.selected > .sorting_1,
+.cmdbuild-graph table.dataTable.order-column.stripe tbody tr.even.selected > .sorting_1,
+.cmdbuild-graph table.dataTable.order-column.stripe tbody tr.odd.selected > .sorting_1 {
+	background-color: #cbdaf0!important;
+}
+.cmdbuild-graph table.dataTable tbody td {
+	height: auto;
+	padding: 5px 6px 5px;
+}
+.cmdbuild-graph .cmdbuildGridNavigationWrapper .cmdbuildGridFilterContainer {
+	width: calc(100% - 130px);
+}
+.cmdbuild-graph .cmdbuildGridNavigationWrapper input[type="text"]{
+	width: auto!important; 
+}
+.cmdbuild-graph .cmdbuildGridNavigationWrapper .cmdbuildGridNavigationContainer {
+	width: 120px;
+}
+.cmdbuild-graph .cmdbuildGridNavigationWrapper .cmdbuildGridNavigationCount {
+	margin: 0.2em 0.1em 0em 0em;
+	font-size: 0.9em;
+}
+.cmdbuild-graph .grid-btn {
+	cursor: pointer;
+	width: 16px;
+	height: 16px;
+	display: inline-block;
+}
+/**
+ * TOOLTIP
+ */
+.ui-tooltip {
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	-ms-border-radius: 3px;
+	-o-border-radius: 3px;
+	border-radius: 3px;
+	border-width: 1px !important;
+	border-color: #8eaace;
+	border-style: solid;
+	padding: 6px 5px 5px;
+	background: #e9f2ff;
+	box-shadow: none;
+}
+.ui-tooltip .ui-tooltip-content  {
+	color: #444;
+	font-size: 11px;
+	font-weight: normal;
+}
+#viewerInformation {
+	display: block;
+}
+.viewerInformationContent .rel_desc_direct {
+	padding-right: 16px;
+	position: relative;
+	text-align: right;
+}
+.viewerInformationContent .rel_desc_direct .icon {
+	background-image: url("images/ui-icons_416da3_256x240.png");
+	background-position: -64px 0;
+	position: absolute;
+	width: 16px;
+	height: 16px;
+	top: 0;
+	right: 0;
+}
+.viewerInformationContent .rel_desc_inverse {
+	padding-left: 16px;
+	position: relative;
+}
+.viewerInformationContent .rel_desc_inverse .icon {
+	background-image: url("images/ui-icons_416da3_256x240.png");
+	position: absolute;
+	width: 16px;
+	height: 16px;
+	top: 0;
+	left: 0;
+}
+/**
+ * USEFUL
+ */
+.border-box {
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-ms-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+}
+
+/**
+ * PAGES
+ */
+ 
+#detailform > .ui-tabs-nav.ui-widget-header,
+#classlistform > .ui-tabs-nav.ui-widget-header,
+#cardlistform > .ui-tabs-nav.ui-widget-header {
+	display: none;
+}
+#cardOverview, #card,
+#classes, #superClasses,
+#cards, #selected  {
+	border: 0;
+	padding: 0;
+}
+/**
+ * NODE TOOLTIP
+ */
+.viewerInformation {
+	position: absolute;
+	z-index: 100;
+	width: 200px;
+	display: none;
+	box-shadow: 2px 2px 5px #CCC;
+}
+.viewerInformation .ui-widget-header {
+	padding: .2em .4em;
+}
+.viewerInformation .ui-widget-content {
+	padding: .2em .4em;
+}
+.viewerInformation .ui-widget-content h3 {
+	margin: 0 0 .5em 0;
+}
+.viewerInformation .ui-widget-content p {
+	margin: 0 0 .5em 0;
+}
+.viewerInformation .ui-widget-content img {
+	float: right;
+}
+
+/**
+ * NODE LABEL
+ */
+.labelText {
+	position: absolute;
+	display: none;
+	font-family: tahoma,arial,verdana,sans-serif;
+	color: #416da3;
+	font-size: 11px;
+	z-index: 0;
+	font-weight: bold;
+	text-shadow: 1px 1px #CCC;
+}
+
+/**
+ * ATTRIBUTES TABLE
+ */
+table.dataTable .gridAttributesTable {
+	font-family: tahoma, arial, verdana, sans-serif;
+	font-size: 10px;
+	margin-left: 20%;
+	width: 80%;
+}
+table.dataTable .gridAttributesTable th,
+table.dataTable .gridAttributesTable thead th {
+	padding: 2px 5px;
+	cursor: default;
+	text-align: left;
+}
+table.dataTable .gridAttributesTable td,
+table.dataTable .gridAttributesTable tbody td {
+	padding: 2px 5px;
+	cursor: default;
+}
+.cmdbuild-graph .hideAttributes .grid-btn.btn-attributes {
+	display: none;
+}
+/**
+ * LOADER
+ */
+.waitMe_container {
+	position: relative
+}
+body.waitMe_container {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 80px;
+	height: 100%
+}
+.waitMe_container .waitMe {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 80px;
+	height: 100%;
+	z-index: 9989;
+	text-align: center
+}
+.waitMe_container .waitMe * {
+	font-family: sans-serif;
+	font-size: 14px;
+	font-weight: initial;
+	font-style: initial;
+	color: initial;
+	text-decoration: initial;
+	text-transform: initial;
+	padding: initial;
+	margin: initial
+}
+.waitMe_container .waitMe .waitMe_content {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 80px;
+	height: 100%
+}
+.waitMe_container .waitMe .waitMe_progress {
+	position: relative
+}
+.waitMe_container .waitMe .waitMe_progress>div {
+	-webkit-animation-fill-mode: both;
+	animation-fill-mode: both;
+	display: inline-block
+}
+.waitMe_container .waitMe .waitMe_text {
+	position: relative;
+	margin: 20px 0 0
+}
+div.waitMe {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 80px;
+	height: 100%
+}
+
+/**
+ * FIXES
+ */
+.DTFC_LeftBodyLiner,
+.DTFC_RightBodyLiner {
+	height: 0;
+}
+#domains4Class-menu {
+	max-height: 250px;
+}
+/**
+ * CUSTOM
+ */
+/* Domains filter grid */
+#filterByDomainForm td .desc_direct {
+	padding-right: 12px;
+	position: relative;
+	text-align: right;
+	display: block;
+}
+#filterByDomainForm td .desc_direct .icon {
+	background-image: url("images/ui-icons_416da3_256x240.png");
+	background-position: -34px -2px;
+	position: absolute;
+	width: 12px;
+	height: 12px;
+	top: 0;
+	right: 0;
+}
+#filterByDomainForm td .desc_inverse {
+	padding-left: 12px;
+	position: relative;
+	display: block;
+}
+#filterByDomainForm td .desc_inverse .icon {
+	background-image: url("images/ui-icons_416da3_256x240.png");
+	background-position: -98px -2px;
+	position: absolute;
+	width: 12px;
+	height: 12px;
+	top: 0;
+	left: 0;
+}
+
+/* prompt */
+div.jqi {
+	background-color: #eee;
+	padding: .2em;
+}
+div.jqi .jqiform {
+	margin: 0;
+}
+div.jqi .jqiclose {
+    top: 18px;
+	right: 7px;
+	z-index: 10;
+	width: 20px;
+	padding: 3px 6px;
+	color: #416da3;
+	cursor: pointer;
+}
+div.jqi .jqititle {
+	font-size: 11px;
+}
+div.jqi .jqimessage {
+	border-bottom: 0;
+}
+div.jqi .jqimessage .radio {
+	padding-left: 16px;
+	position: relative;
+	cursor: default;
+}
+div.jqi .jqimessage .radio.selectable {
+	cursor: pointer;
+}
+div.jqi .jqimessage .radio .icon {
+	width: 12px;
+	height: 12px;
+	position: absolute;
+	top: 0;
+	left: 0;
+	background-image: url("images/ui-icons_416da3_256x240.png");
+	background-position: -113px -145px;
+}
+div.jqi .jqimessage .radio.selectable .icon {
+	background-position: -80px -145px;
+}
+div.jqi .jqibuttons {
+	border-top: 0;
+	text-align: center; 
+	padding: .5em 0;
+	border-radius: 0;
+	margin: 0;
+}
+div.jqi .jqibuttons .ui-button {
+	padding: 0 .5em;
+	margin: auto;
+	float: none;
+}
+/*
+* Override font-weight rule for "a" tags
+*/
+.cmdbuildLabel {
+	width: 20px!important;
+	font-family: tahoma,arial,verdana,sans-serif;
+	font-size: 11px;
+}
+.invisible {
+	display:none;
+}
+.relationAttributes {
+	font-size: 9px;
+}
+#margin10 {
+	margin-left:10;
+	margin-right:5;
+ 	font-weight: normal;
+}
+.allWidth {
+	width: 100%;
+	padding: 4px 4px 4px 4px;
+	-webkit-align-content: flex-start !important;
+	align-content: flex-start !important;
+}
+.canvas {
+	width: 100%;
+	height: 100%;	
+}
+.openCardsFromClass {
+	cursor: pointer;
+	width: 16px;
+	height: 16px;
+	display: inline-block;
+	background:transparent url("../images/geogebra.png") right 50% no-repeat;
+}
+
+.commandPanelWindow {
+	overflow: auto;
+}
