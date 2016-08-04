@@ -216,6 +216,36 @@
 				<artifactId>groovy-all</artifactId>
 				<version>${groovy.version}</version>
 			</dependency>
+
+			<dependency>
+				<groupId>org.codehaus.plexus</groupId>
+				<artifactId>plexus-utils</artifactId>
+				<version>3.0.8</version>
+			</dependency>
+
+			<dependency>
+				<groupId>org.sonatype.sisu</groupId>
+				<artifactId>sisu-inject-bean</artifactId>
+				<version>1.4.2</version>
+			</dependency>
+
+			<dependency>
+				<groupId>org.apache.maven</groupId>
+				<artifactId>maven-core</artifactId>
+				<version>3.0</version>
+			</dependency>
+
+			<dependency>
+				<groupId>org.apache.maven.surefire</groupId>
+				<artifactId>maven-surefire-common</artifactId>
+				<version>2.12.4</version>
+			</dependency>
+
+			<!--<dependency>-->
+				<!--<groupId>org.codehaus.plexus</groupId>-->
+				<!--<artifactId>plexus</artifactId>-->
+				<!--<version>3.3.1</version>-->
+			<!--</dependency>-->
 		</dependencies>
 	</dependencyManagement>
 
@@ -272,87 +302,117 @@
 			<artifactId>commons-logging</artifactId>
 			<scope>provided</scope>
 		</dependency>
+
+		<dependency>
+			<groupId>org.codehaus.plexus</groupId>
+			<artifactId>plexus-utils</artifactId>
+			<version>3.0.8</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.sonatype.sisu</groupId>
+			<artifactId>sisu-inject-bean</artifactId>
+			<version>1.4.2</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache.maven</groupId>
+			<artifactId>maven-core</artifactId>
+			<version>3.0</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache.maven.surefire</groupId>
+			<artifactId>maven-surefire-common</artifactId>
+			<version>2.12.4</version>
+		</dependency>
+
+		<!--<dependency>-->
+			<!--<groupId>org.codehaus.plexus</groupId>-->
+			<!--<artifactId>plexus</artifactId>-->
+			<!--<version>3.3.1</version>-->
+		<!--</dependency>-->
 	</dependencies>
 
 	<build>
 		<pluginManagement>
 			<plugins>
-				<plugin>
-					<groupId>org.apache.maven.plugins</groupId>
-					<artifactId>maven-surefire-plugin</artifactId>
-					<version>${maven-surefire-plugin.version}</version>
-					<configuration>
-						<includes>
-							<include>unit/**</include>
-						</includes>
-					</configuration>
-				</plugin>
-				<plugin>
-					<groupId>org.apache.maven.plugins</groupId>
-					<artifactId>maven-failsafe-plugin</artifactId>
-					<version>${maven-failsafe-plugin.version}</version>
-					<executions>
-						<execution>
-							<id>run-integration-tests</id>
-							<goals>
-								<goal>integration-test</goal>
-							</goals>
-						</execution>
-						<execution>
-							<id>verify-test-results</id>
-							<goals>
-								<goal>verify</goal>
-							</goals>
-						</execution>
-					</executions>
-					<configuration>
-						<includes>
-							<include>integration/*.java</include>
-							<include>integration/**/*.java</include>
-						</includes>
-					</configuration>
-				</plugin>
+				<!--<plugin>-->
+					<!--<groupId>org.apache.maven.plugins</groupId>-->
+					<!--<artifactId>maven-surefire-plugin</artifactId>-->
+					<!--<version>${maven-surefire-plugin.version}</version>-->
+					<!--<configuration>-->
+						<!--<includes>-->
+							<!--<include>unit/**</include>-->
+						<!--</includes>-->
+					<!--</configuration>-->
+				<!--</plugin>-->
+				<!--<plugin>-->
+					<!--<groupId>org.apache.maven.plugins</groupId>-->
+					<!--<artifactId>maven-failsafe-plugin</artifactId>-->
+					<!--<version>${maven-failsafe-plugin.version}</version>-->
+					<!--<executions>-->
+						<!--<execution>-->
+							<!--<id>run-integration-tests</id>-->
+							<!--<goals>-->
+								<!--<goal>integration-test</goal>-->
+							<!--</goals>-->
+						<!--</execution>-->
+						<!--<execution>-->
+							<!--<id>verify-test-results</id>-->
+							<!--<goals>-->
+								<!--<goal>verify</goal>-->
+							<!--</goals>-->
+						<!--</execution>-->
+					<!--</executions>-->
+					<!--<configuration>-->
+						<!--<includes>-->
+							<!--<include>integration/*.java</include>-->
+							<!--<include>integration/**/*.java</include>-->
+						<!--</includes>-->
+					<!--</configuration>-->
+				<!--</plugin>-->
 				<plugin>
 					<groupId>org.codehaus.mojo</groupId>
 					<artifactId>tomcat-maven-plugin</artifactId>
 					<version>${tomcat-maven-plugin.version}</version>
 				</plugin>
-				<plugin>
-					<groupId>org.apache.maven.plugins</groupId>
-					<artifactId>maven-jar-plugin</artifactId>
-					<version>${maven-jar-plugin.version}</version>
-					<configuration>
-						<archive>
-							<manifestEntries>
-								<Implementation-Changeset>${changeSet}</Implementation-Changeset>
-							</manifestEntries>
-						</archive>
-					</configuration>
-				</plugin>
-				<plugin>
-					<groupId>org.eclipse.m2e</groupId>
-					<artifactId>lifecycle-mapping</artifactId>
-					<version>1.0.0</version>
-					<configuration>
-						<lifecycleMappingMetadata>
-							<pluginExecutions>
-								<pluginExecution>
-									<pluginExecutionFilter>
-										<groupId> org.codehaus.mojo</groupId>
-										<artifactId>buildnumber-maven-plugin</artifactId>
-										<versionRange>${buildnumber-maven-plugin.version}</versionRange>
-										<goals>
-											<goal>hgchangeset</goal>
-										</goals>
-									</pluginExecutionFilter>
-									<action>
-										<ignore></ignore>
-									</action>
-								</pluginExecution>
-							</pluginExecutions>
-						</lifecycleMappingMetadata>
-					</configuration>
-				</plugin>
+				<!--<plugin>-->
+					<!--<groupId>org.apache.maven.plugins</groupId>-->
+					<!--<artifactId>maven-jar-plugin</artifactId>-->
+					<!--<version>${maven-jar-plugin.version}</version>-->
+					<!--<configuration>-->
+						<!--<archive>-->
+							<!--<manifestEntries>-->
+								<!--<Implementation-Changeset>${changeSet}</Implementation-Changeset>-->
+							<!--</manifestEntries>-->
+						<!--</archive>-->
+					<!--</configuration>-->
+				<!--</plugin>-->
+				<!--<plugin>-->
+					<!--<groupId>org.eclipse.m2e</groupId>-->
+					<!--<artifactId>lifecycle-mapping</artifactId>-->
+					<!--<version>1.0.0</version>-->
+					<!--<configuration>-->
+						<!--<lifecycleMappingMetadata>-->
+							<!--<pluginExecutions>-->
+								<!--<pluginExecution>-->
+									<!--<pluginExecutionFilter>-->
+										<!--<groupId> org.codehaus.mojo</groupId>-->
+										<!--<artifactId>buildnumber-maven-plugin</artifactId>-->
+										<!--<versionRange>${buildnumber-maven-plugin.version}</versionRange>-->
+										<!--<goals>-->
+											<!--<goal>hgchangeset</goal>-->
+										<!--</goals>-->
+									<!--</pluginExecutionFilter>-->
+									<!--<action>-->
+										<!--<ignore></ignore>-->
+									<!--</action>-->
+								<!--</pluginExecution>-->
+							<!--</pluginExecutions>-->
+						<!--</lifecycleMappingMetadata>-->
+					<!--</configuration>-->
+				<!--</plugin>-->
 			</plugins>
 		</pluginManagement>
 		<plugins>
@@ -366,29 +426,35 @@
 					<showDeprecation>false</showDeprecation>
 				</configuration>
 			</plugin>
-			<plugin>
-				<groupId>org.codehaus.mojo</groupId>
-				<artifactId>buildnumber-maven-plugin</artifactId>
-				<version>${buildnumber-maven-plugin.version}</version>
-				<executions>
-					<execution>
-						<goals>
-							<goal>hgchangeset</goal>
-						</goals>
-					</execution>
-				</executions>
-			</plugin>
+			<!--<plugin>-->
+				<!--<groupId>org.codehaus.mojo</groupId>-->
+				<!--<artifactId>buildnumber-maven-plugin</artifactId>-->
+				<!--<version>${buildnumber-maven-plugin.version}</version>-->
+				<!--<executions>-->
+					<!--<execution>-->
+						<!--<goals>-->
+							<!--<goal>hgchangeset</goal>-->
+						<!--</goals>-->
+					<!--</execution>-->
+				<!--</executions>-->
+			<!--</plugin>-->
 		</plugins>
 	</build>
 
 	<repositories>
+		<!--<repository>-->
+			<!--<id>codehaus</id>-->
+			<!--<url>http://repository.codehaus.org</url>-->
+		<!--</repository>-->
+
+		<!--<repository>-->
+			<!--<id>cukes</id>-->
+			<!--<url>http://cukes.info/maven</url>-->
+		<!--</repository>-->
 		<repository>
-			<id>codehaus</id>
-			<url>http://repository.codehaus.org</url>
-		</repository>
-		<repository>
-			<id>cukes</id>
-			<url>http://cukes.info/maven</url>
+			<id>central</id>
+			<name>Central Repository</name>
+			<url>http://repo.maven.apache.org/maven2</url>
 		</repository>
 		<repository>
 			<id>restlet</id>
@@ -422,17 +488,62 @@
 			<id>maven.ow2.org</id>
 			<url>http://maven.ow2.org/maven2</url>
 		</repository>
+
+		<repository>
+			<id>com.springsource.repository.maven.release</id>
+			<url>http://maven.springframework.org/release/</url>
+			<snapshots><enabled>false</enabled></snapshots>
+		</repository>
+		<repository>
+			<id>oracleReleases</id>
+			<name>Oracle Released Java Packages</name>
+			<url>http://download.oracle.com/maven</url>
+		</repository>
+		<repository>
+			<id>JBossRepo1</id>
+			<name>Jboss1</name>
+			<url>https://repository.jboss.org/nexus/content/groups/public-jboss/</url>
+		</repository>
+		<repository>
+			<id>JBossRepo</id>
+			<name>Jboss</name>
+			<url>https://repository.jboss.org/nexus/content/repositories/releases/</url>
+		</repository>
 	</repositories>
 
 	<pluginRepositories>
 		<pluginRepository>
-			<id>cukes</id>
-			<url>http://cukes.info/maven</url>
+			<id>central</id>
+			<name>Maven plugin</name>
+			<url>http://repo.maven.apache.org/maven2</url>
+			<layout>default</layout>
+			<snapshots>
+				<enabled>true</enabled>
+			</snapshots>
+			<releases>
+				<enabled>false</enabled>
+			</releases>
 		</pluginRepository>
 		<pluginRepository>
-			<id>croche-releases</id>
-			<url>http://croche.googlecode.com/svn/repository/releases</url>
+			<id>centra2</id>
+			<name>Maven plugin</name>
+			<url>http://maven.ow2.org/maven2</url>
+			<layout>default</layout>
+			<snapshots>
+				<enabled>true</enabled>
+			</snapshots>
+			<releases>
+				<enabled>false</enabled>
+			</releases>
 		</pluginRepository>
+		<!--<pluginRepository>-->
+			<!--<id>cukes</id>-->
+			<!--<url>http://cukes.info/maven</url>-->
+		<!--</pluginRepository>-->
+		<!--<pluginRepository>-->
+			<!--<id>croche-releases</id>-->
+			<!--<url>http://croche.googlecode.com/svn/repository/releases</url>-->
+		<!--</pluginRepository>-->
 	</pluginRepositories>
 
 	<profiles>
