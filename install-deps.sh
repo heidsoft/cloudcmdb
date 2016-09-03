@@ -35,5 +35,4 @@ mvn install:install-file -DgroupId=net.sourceforge.sharkwf -DartifactId=shark-in
 
 mvn install:install-file -DgroupId=net.sourceforge.jxpdl -DartifactId=jxpdl -Dversion=1.3-1 -Dpackaging=jar -Dfile=/Users/heidsoft/work/cloudcmdb/shark/lib/jxpdl/jxpdl.jar
 
-
 mvn install:install-file -DgroupId=net.sourceforge.supercsv -DartifactId=supercsv -Dversion=1.52 -Dpackaging=jar -Dfile=/Users/heidsoft/work/cloudcmdb/core/lib/SuperCSV-1.52.jar

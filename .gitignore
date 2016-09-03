@@ -50,3 +50,36 @@ crashlytics.properties
 crashlytics-build.properties
 fabric.properties
 
+
+auth/core/cmdbuild-auth-core.iml
+       	auth/default/cmdbuild-auth-default.iml
+       	bim/bimserver/cmdbuild-bim-bimserver.iml
+       	bim/core/cmdbuild-bim-core.iml
+       	cmdbf/cmdbuild-cmdbf.iml
+       	cmdbuild-main.iml
+       	cmdbuild/cmdbuild.iml
+       	commons/cmdbuild-commons.iml
+       	core/cmdbuild-core.iml
+       	dao/core/cmdbuild-dao-core.iml
+       	dao/postgresql/cmdbuild-dao-postgresql.iml
+       	dms/alfresco/cmdbuild-dms-alfresco.iml
+       	dms/cmis/cmdbuild-dms-cmis.iml
+       	dms/core/cmdbuild-dms-core.iml
+       	parent/cmdbuild-parent.iml
+       	scheduler/core/cmdbuild-scheduler-core.iml
+       	scheduler/quartz/cmdbuild-scheduler-quartz.iml
+       	services/rest/cmdbuild-services-rest.iml
+       	services/rest/parent/cmdbuild-services-rest-parent.iml
+       	services/rest/test/cmdbuild-services-rest-test.iml
+       	services/rest/v1/cmdbuild-services-rest-v1.iml
+       	services/rest/v2/cmdbuild-services-rest-v2.iml
+       	services/sync/core/cmdbuild-services-sync-core.iml
+       	services/sync/internal/cmdbuild-services-sync-internal.iml
+       	services/sync/sql/cmdbuild-services-sync-sql.iml
+       	shark/client/cmdbuild-shark-client.iml
+       	shark/commons/cmdbuild-shark-commons.iml
+       	shark/extensions/cmdbuild-shark-extensions.iml
+       	shark/legacy-extensions/cmdbuild-shark-legacy-extensions.iml
+       	shark/lib/.DS_Store
+       	shark/server/cmdbuild-shark-server.iml
+       	ws-client/cmdbuild-ws-client.iml
