@@ -15,7 +15,7 @@
 		<antlr.version>3.5.2</antlr.version>
 		<itext.version>2.1.7</itext.version> <!-- jasperreports dependency -->
 		<jasperreports.version>6.2.1</jasperreports.version>
-		<json-java.version>20110113</json-java.version>
+		<json-java.version>20160810</json-java.version>
 		<restlet.version>2.0.1</restlet.version>
 	</properties>
 
@@ -83,11 +83,11 @@
 			</exclusions>
 		</dependency>
 
-		<dependency>
-			<groupId>com.github.douglascrockford</groupId>
-			<artifactId>json-java</artifactId>
-			<version>${json-java.version}</version>
-		</dependency>
+		<!--<dependency>-->
+		<!--<groupId>com.github.douglascrockford</groupId>-->
+		<!--<artifactId>json-java</artifactId>-->
+		<!--<version>${json-java.version}</version>-->
+		<!--</dependency>-->
 		<dependency>
 			<groupId>org.codehaus.jackson</groupId>
 			<artifactId>jackson-mapper-asl</artifactId>
@@ -222,6 +222,12 @@
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-context</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.antlr</groupId>
+			<artifactId>antlr</artifactId>
+			<version>3.5.2</version>
 		</dependency>
 	</dependencies>
 
