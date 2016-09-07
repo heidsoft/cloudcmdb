@@ -26,14 +26,14 @@
 		<module>scheduler/core</module>
 		<module>scheduler/quartz</module>
 		<module>services/rest</module>
-		<module>shark/client</module>
+		<!--<module>shark/client</module>-->
 		<module>services/sync/core</module>
 		<module>services/sync/internal</module>
 		<module>services/sync/sql</module>
-		<module>shark/commons</module>
-		<module>shark/extensions</module>
-		<module>shark/legacy-extensions</module>
-		<module>shark/server</module>
+		<!--<module>shark/commons</module>-->
+		<!--<module>shark/extensions</module>-->
+		<!--<module>shark/legacy-extensions</module>-->
+		<!--<module>shark/server</module>-->
 		<module>ws-client</module>
 	</modules>
 </project>

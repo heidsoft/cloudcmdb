@@ -30,6 +30,13 @@
 			<artifactId>cxf-rt-transports-http</artifactId>
 			<scope>runtime</scope>
 		</dependency>
+
+		<dependency>
+			<groupId>org.apache.cxf</groupId>
+			<artifactId>cxf-java2ws-plugin</artifactId>
+			<version>3.1.7</version>
+		</dependency>
+
 	</dependencies>
 	<build>
 		<plugins>
@@ -43,7 +50,7 @@
 			<plugin>
 				<groupId>org.apache.cxf</groupId>
 				<artifactId>cxf-java2ws-plugin</artifactId>
-				<version>${cxf.version}</version>
+				<!--<version>${cxf.version}</version>-->
 				<dependencies>
 					<dependency>
 						<groupId>org.apache.cxf</groupId>
@@ -76,36 +83,34 @@
 						</goals>
 					</execution>
 				</executions>
-				<configuration>
-				</configuration>
 			</plugin>
-			<plugin>
-				<groupId>org.apache.cxf</groupId>
-				<artifactId>cxf-codegen-plugin</artifactId>
-				<version>${cxf.version}</version>
-				<executions>
-					<execution>
-						<id>generate-sources</id>
-						<phase>generate-sources</phase>
-						<configuration>
-							<sourceRoot>${project.build.directory}/generated/cxf</sourceRoot>
-							<wsdlOptions>
-								<wsdlOption>
-									<wsdl>${project.build.directory}/generated/wsdl/Private.wsdl</wsdl>
-									<extraargs>
-										<extraarg>-frontend</extraarg>
-										<!-- used for compatibility with Java 6 -->
-										<extraarg>jaxws21</extraarg>
-									</extraargs>
-								</wsdlOption>
-							</wsdlOptions>
-						</configuration>
-						<goals>
-							<goal>wsdl2java</goal>
-						</goals>
-					</execution>
-				</executions>
-			</plugin>
+			<!--<plugin>-->
+			<!--<groupId>org.apache.cxf</groupId>-->
+			<!--<artifactId>cxf-codegen-plugin</artifactId>-->
+			<!--<version>${cxf.version}</version>-->
+			<!--<executions>-->
+			<!--<execution>-->
+			<!--<id>generate-sources</id>-->
+			<!--<phase>generate-sources</phase>-->
+			<!--<configuration>-->
+			<!--<sourceRoot>${project.build.directory}/generated/cxf</sourceRoot>-->
+			<!--<wsdlOptions>-->
+			<!--<wsdlOption>-->
+			<!--<wsdl>${project.build.directory}/generated/wsdl/Private.wsdl</wsdl>-->
+			<!--<extraargs>-->
+			<!--<extraarg>-frontend</extraarg>-->
+			<!--&lt;!&ndash; used for compatibility with Java 6 &ndash;&gt;-->
+			<!--<extraarg>jaxws21</extraarg>-->
+			<!--</extraargs>-->
+			<!--</wsdlOption>-->
+			<!--</wsdlOptions>-->
+			<!--</configuration>-->
+			<!--<goals>-->
+			<!--<goal>wsdl2java</goal>-->
+			<!--</goals>-->
+			<!--</execution>-->
+			<!--</executions>-->
+			<!--</plugin>-->
 			<plugin>
 				<artifactId>maven-jar-plugin</artifactId>
 				<executions>
@@ -146,21 +151,21 @@
 										</execute>
 									</action>
 								</pluginExecution>
-								<pluginExecution>
-									<pluginExecutionFilter>
-										<groupId>org.apache.cxf</groupId>
-										<artifactId>cxf-codegen-plugin</artifactId>
-										<versionRange>[${cxf.version},)</versionRange>
-										<goals>
-											<goal>wsdl2java</goal>
-										</goals>
-									</pluginExecutionFilter>
-									<action>
-										<execute>
-											<runOnIncremental>false</runOnIncremental>
-										</execute>
-									</action>
-								</pluginExecution>
+								<!--<pluginExecution>-->
+								<!--<pluginExecutionFilter>-->
+								<!--<groupId>org.apache.cxf</groupId>-->
+								<!--<artifactId>cxf-codegen-plugin</artifactId>-->
+								<!--<versionRange>[${cxf.version},)</versionRange>-->
+								<!--<goals>-->
+								<!--<goal>wsdl2java</goal>-->
+								<!--</goals>-->
+								<!--</pluginExecutionFilter>-->
+								<!--<action>-->
+								<!--<execute>-->
+								<!--<runOnIncremental>false</runOnIncremental>-->
+								<!--</execute>-->
+								<!--</action>-->
+								<!--</pluginExecution>-->
 							</pluginExecutions>
 						</lifecycleMappingMetadata>
 					</configuration>

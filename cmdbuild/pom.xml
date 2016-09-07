@@ -208,36 +208,36 @@
 				<groupId>org.codehaus.mojo</groupId>
 				<artifactId>tomcat-maven-plugin</artifactId>
 			</plugin>
-			<plugin>
-				<groupId>croche.maven</groupId>
-				<artifactId>maven-merge-file-plugin</artifactId>
-				<version>${maven-merge-file-plugin.version}</version>
-				<executions>
-					<execution>
-						<id>create-translation-file</id>
-						<phase>process-test-resources</phase>
-						<goals>
-							<goal>merge</goal>
-						</goals>
-						<configuration>
-							<merges>
-								<merge>
-									<!-- The plugin doesn't create unexisting directories <targetFile>${project.build.directory}/generated-test-sources/translations/en.js</targetFile> -->
-									<targetFile>${project.build.directory}/en.js</targetFile>
-									<sourceDirs>
-										<sourceDir>src/main/webapp/translations</sourceDir>
-									</sourceDirs>
-									<includes>
-										<include>en.json</include>
-									</includes>
-									<separator>CMDBuild.Translation = </separator>
-									<encoding>UTF-8</encoding>
-								</merge>
-							</merges>
-						</configuration>
-					</execution>
-				</executions>
-			</plugin>
+			<!--<plugin>-->
+			<!--<groupId>croche.maven</groupId>-->
+			<!--<artifactId>maven-merge-file-plugin</artifactId>-->
+			<!--<version>${maven-merge-file-plugin.version}</version>-->
+			<!--<executions>-->
+			<!--<execution>-->
+			<!--<id>create-translation-file</id>-->
+			<!--<phase>process-test-resources</phase>-->
+			<!--<goals>-->
+			<!--<goal>merge</goal>-->
+			<!--</goals>-->
+			<!--<configuration>-->
+			<!--<merges>-->
+			<!--<merge>-->
+			<!--&lt;!&ndash; The plugin doesn't create unexisting directories <targetFile>${project.build.directory}/generated-test-sources/translations/en.js</targetFile> &ndash;&gt;-->
+			<!--<targetFile>${project.build.directory}/en.js</targetFile>-->
+			<!--<sourceDirs>-->
+			<!--<sourceDir>src/main/webapp/translations</sourceDir>-->
+			<!--</sourceDirs>-->
+			<!--<includes>-->
+			<!--<include>en.json</include>-->
+			<!--</includes>-->
+			<!--<separator>CMDBuild.Translation = </separator>-->
+			<!--<encoding>UTF-8</encoding>-->
+			<!--</merge>-->
+			<!--</merges>-->
+			<!--</configuration>-->
+			<!--</execution>-->
+			<!--</executions>-->
+			<!--</plugin>-->
 		</plugins>
 		<pluginManagement>
 			<plugins>
@@ -282,23 +282,23 @@
 			<build>
 				<plugins>
 					<!-- Run JSTestDriver suite without starting the server -->
-					<plugin>
-						<groupId>com.googlecode.jstd-maven-plugin</groupId>
-						<artifactId>jstd-maven-plugin</artifactId>
-						<configuration>
-							<verbose>true</verbose>
-							<config>src/test/config/JsTestDriver.conf</config>
-							<reset>true</reset>
-						</configuration>
-						<executions>
-							<execution>
-								<id>run-tests</id>
-								<goals>
-									<goal>test</goal>
-								</goals>
-							</execution>
-						</executions>
-					</plugin>
+					<!--<plugin>-->
+					<!--<groupId>com.googlecode.jstd-maven-plugin</groupId>-->
+					<!--<artifactId>jstd-maven-plugin</artifactId>-->
+					<!--<configuration>-->
+					<!--<verbose>true</verbose>-->
+					<!--<config>src/test/config/JsTestDriver.conf</config>-->
+					<!--<reset>true</reset>-->
+					<!--</configuration>-->
+					<!--<executions>-->
+					<!--<execution>-->
+					<!--<id>run-tests</id>-->
+					<!--<goals>-->
+					<!--<goal>test</goal>-->
+					<!--</goals>-->
+					<!--</execution>-->
+					<!--</executions>-->
+					<!--</plugin>-->
 				</plugins>
 			</build>
 		</profile>
